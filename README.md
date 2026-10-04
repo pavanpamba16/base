@@ -1,13 +1,13 @@
 # Explainable AI for Enhanced Accuracy in Malaria Diagnosis Using Ensemble Machine Learning Models
 
-![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20Online-brightgreen?style=for-the-badge&logo=cloudflare)
+![Live Demo](https://img.shields.io/badge/Live%20Demo-malaria--diagnostic--base-brightgreen?style=for-the-badge&logo=streamlit)
 ![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Framework](https://img.shields.io/badge/Framework-Scikit--Learn%20%7C%20XGBoost%20%7C%20CatBoost%20%7C%20SHAP%20%7C%20LIME-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Fully%20Reproduced-brightgreen.svg)
 
-> 🌐 **Public Live Demo:** **[https://oakland-manufacturer-drums-mhz.trycloudflare.com](https://oakland-manufacturer-drums-mhz.trycloudflare.com)** *(Instant public access, no passwords)*  
-> 💻 **Local Instance:** **[http://localhost:8501](http://localhost:8501)** *(When running locally)*
+> 🌐 **Live Demo URL:** **[https://malaria-diagnostic-base.streamlit.app](https://malaria-diagnostic-base.streamlit.app)**  
+> 💻 **Local Instance:** **[http://localhost:8501](http://localhost:8501)** *(Run locally via `streamlit run app.py`)*
 
 ---
 
