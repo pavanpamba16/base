@@ -1,13 +1,13 @@
 # Explainable AI for Enhanced Accuracy in Malaria Diagnosis Using Ensemble Machine Learning Models
 
-![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20Online-brightgreen?style=for-the-badge&logo=streamlit)
+![Demo Link](https://img.shields.io/badge/Demo%20Link-http%3A%2F%2Flocalhost%3A8501-brightgreen?style=for-the-badge&logo=streamlit)
 ![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Framework](https://img.shields.io/badge/Framework-Scikit--Learn%20%7C%20XGBoost%20%7C%20CatBoost%20%7C%20SHAP%20%7C%20LIME-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Fully%20Reproduced-brightgreen.svg)
 
-> 🚀 **Live Demo URL:** **[https://malaria-diagnostic-system.loca.lt](https://malaria-diagnostic-system.loca.lt)**  
-> *(If prompted for Tunnel Password on first visit, enter endpoint IP: `49.37.152.234`)*
+> 🚀 **Demo Link:** **[http://localhost:8501](http://localhost:8501)**  
+> *(Application running locally via Streamlit on port `8501`)*
 
 ---
 
