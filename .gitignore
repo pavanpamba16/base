@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# CatBoost training logs
+catboost_info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# Environment variables
+.env
