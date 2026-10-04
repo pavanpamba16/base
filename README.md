@@ -1,13 +1,13 @@
 # Explainable AI for Enhanced Accuracy in Malaria Diagnosis Using Ensemble Machine Learning Models
 
-![Demo Link](https://img.shields.io/badge/Demo%20Link-http%3A%2F%2Flocalhost%3A8501-brightgreen?style=for-the-badge&logo=streamlit)
+![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20Online-brightgreen?style=for-the-badge&logo=cloudflare)
 ![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Framework](https://img.shields.io/badge/Framework-Scikit--Learn%20%7C%20XGBoost%20%7C%20CatBoost%20%7C%20SHAP%20%7C%20LIME-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Fully%20Reproduced-brightgreen.svg)
 
-> 🚀 **Demo Link:** **[http://localhost:8501](http://localhost:8501)**  
-> *(Application running locally via Streamlit on port `8501`)*
+> 🌐 **Public Live Demo:** **[https://oakland-manufacturer-drums-mhz.trycloudflare.com](https://oakland-manufacturer-drums-mhz.trycloudflare.com)** *(Instant public access, no passwords)*  
+> 💻 **Local Instance:** **[http://localhost:8501](http://localhost:8501)** *(When running locally)*
 
 ---
 
