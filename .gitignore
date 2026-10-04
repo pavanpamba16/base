@@ -20,3 +20,5 @@ env/
 
 # Environment variables
 .env
+
+cloudflared.exe
