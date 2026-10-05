@@ -166,20 +166,40 @@ SLIDE 15: Publications, Societal Impact & Conclusion
 
 ---
 
-### Slide 14: Rigorous Engineering & Test Suite Validation
-- **Visuals:** Terminal output showing `Ran 8 tests in 5.739s - OK`.
+### Slide 14: Clinical Medical Dossier & Multi-Format EHR Exports
+- **Visuals:** Rendered HTML Clinical Diagnostic Dossier, Print-to-PDF layout preview, and JSON EHR data exchange schema.
 - **Key Talking Points:**
-  - 100% automated test pass rate across unit and integration tests.
-  - Tests verify leak-free resampling, DCR non-memorization, conformal coverage bounds, counterfactual age immutability, and multimodal fusion.
+  - One-click synthesis of official, print-ready Clinical Diagnostic Dossiers with embedded A4 `@media print` styling, doctor notes, and signature blocks.
+  - HL7 FHIR v4 compliant JSON data exchange serialization (`/Observation`, `/DiagnosticReport`) for hospital Electronic Health Record (EHR) integration.
+  - Multi-patient batch screener producing institutional ward triage registries for hospital epidemic monitoring.
 
 ---
 
-### Slide 15: Publications, Societal Impact & Conclusion
+### Slide 15: Rigorous Engineering & Test Suite Validation
+- **Visuals:** Terminal output showing `Ran 9 tests in 6.513s - OK`.
+- **Key Talking Points:**
+  - 100% automated test pass rate across unit and integration tests.
+  - Tests verify leak-free resampling, DCR non-memorization, conformal coverage bounds, counterfactual age immutability, multimodal fusion, and JSON/HTML report generation.
+
+---
+
+### Slide 16: Strategic 5-Pillar Future Work & Translational Roadmap
+- **Visuals:** 5-Pillar architectural roadmap diagram and TinyML INT8 quantization workflow.
+- **Key Talking Points:**
+  - **Pillar 1 (TinyML & Edge Acceleration):** INT8 post-training quantization compressing model footprint from 45.2MB to 4.1MB for sub-20ms inference on $50 off-grid Android tablets in rural clinics.
+  - **Pillar 2 (Whole Slide Imaging & Cytology Backbones):** Automated parasitemia index quantification across full gigapixel blood films and differential species diagnosis (*P. falciparum* vs. *P. vivax* liver hypnozoites).
+  - **Pillar 3 (Cross-Continental Federated Learning):** Decentralized FedAvg training across international partner hospitals in Nigeria, Kenya, Ghana, and India under $(\epsilon, \delta)$-Differential Privacy to preserve data sovereignty.
+  - **Pillar 4 (Enterprise EHR & Global Surveillance):** Native integration with OpenMRS across 40+ countries and automated transmission telemetry to DHIS2 for national outbreak containment.
+  - **Pillar 5 (Pharmacogenomics & Drug Resistance):** Longitudinal parasite clearance curve modeling and point-of-care PCR genotyping for *pfkelch13* mutations to mitigate emerging Artemisinin resistance.
+
+---
+
+### Slide 17: Publications, Societal Impact & Conclusion
 - **Visuals:** Manuscript preview ([manuscript/PAPER_DRAFT.md](manuscript/PAPER_DRAFT.md)), Target Journals, Project Summary.
 - **Key Talking Points:**
   - Complete paper draft ready for submission to *BMC Medical Informatics and Decision Making* or *IEEE Access*.
-  - Solves a life-critical healthcare problem in low-resource endemic regions.
+  - Solves a life-critical healthcare problem in low-resource endemic regions with verifiable mathematical safety guarantees.
   - Thank you to the evaluation committee. Open for questions.
 
 > **Closing Script:**
-> *"In conclusion, this project transforms a simple questionnaire reproduction into a scientifically sound, clinically actionable, and multimodal decision support ecosystem. We identified and corrected publication data leakage, introduced Stacking Meta-Ensembles with Conformal Uncertainty, audited demographic fairness, and built an open-access clinical tool. Thank you, and I look forward to your questions."*
+> *"In conclusion, this project transforms a simple questionnaire reproduction into a scientifically sound, clinically actionable, and multimodal decision support ecosystem. We identified and corrected publication data leakage, introduced Stacking Meta-Ensembles with Conformal Uncertainty, audited demographic fairness, delivered instant multi-format clinical report downloads, and architected an efficient 5-pillar translational roadmap for future clinical deployment. Thank you, and I look forward to your questions."*

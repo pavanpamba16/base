@@ -1,0 +1,157 @@
+{
+  "resourceType": "ClinicalMalariaDiagnosticDossier",
+  "dossierVersion": "2.4.0",
+  "createdAt": "2026-10-05T22:58:57.704830",
+  "facility": {
+    "name": "NATIONAL EMERGENCY MALARIA TRIAGE CLINIC",
+    "department": "Emergency & Tropical Medicine"
+  },
+  "patient": {
+    "identifier": "MAL-CLI-PT38",
+    "name": "Anonymous / Clinical Cohort",
+    "age": 38,
+    "ageCohort": "Adult"
+  },
+  "attendingClinician": {
+    "name": "Dr. On-Duty Medical Officer",
+    "directives": "Triage completed via ML Decision Support System."
+  },
+  "modelInference": {
+    "predictionBinary": 1,
+    "predictionLabel": "SEVERE_MALARIA_POSITIVE",
+    "probabilitySevere": 0.88,
+    "riskPercentage": 88.0
+  },
+  "whoTriage": {
+    "tier": "RED_EMERGENCY",
+    "tierLabel": "CRITICAL / EMERGENCY TRIAGE (TIER 1)",
+    "score": 16,
+    "maxScore": 20,
+    "scorePercentage": 80.0,
+    "detectedFlags": [
+      {
+        "symptom": "prostraction",
+        "label": "Prostration / Extreme Inability to Sit",
+        "weight": 3
+      },
+      {
+        "symptom": "hyperpyrexia",
+        "label": "Hyperpyrexia (>39\u00b0C Core Temp)",
+        "weight": 2
+      },
+      {
+        "symptom": "cocacola_urine",
+        "label": "Hemoglobinuria / Coca-Cola Urine",
+        "weight": 3
+      },
+      {
+        "symptom": "hypoglycemia",
+        "label": "Hypoglycemia (Blood Glucose <2.2 mmol/L)",
+        "weight": 3
+      },
+      {
+        "symptom": "jundice",
+        "label": "Jaundice / Hyperbilirubinemia",
+        "weight": 2
+      },
+      {
+        "symptom": "Anemia",
+        "label": "Severe Anemia (Hb <7 g/dL)",
+        "weight": 2
+      },
+      {
+        "symptom": "diarrhea",
+        "label": "Severe Dehydration / Diarrhea",
+        "weight": 1
+      }
+    ],
+    "recommendedAction": "Immediate hospital admission. Initiate parenteral Artesunate (IV/IM) stat; check blood glucose and hemoglobin."
+  },
+  "conformalUncertainty": {
+    "status": "Not Evaluated",
+    "confidence": "95%"
+  },
+  "counterfactualInterventions": [],
+  "clinicalObservations": {
+    "age": {
+      "label": "Age of the patient in years (3 - 77)",
+      "value": 38,
+      "status": "CONTINUOUS_YEARS"
+    },
+    "fever": {
+      "label": "Presence of fever (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "cold": {
+      "label": "Presence of cold symptoms (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "rigor": {
+      "label": "Presence of rigor/shivering (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "fatigue": {
+      "label": "Presence of fatigue or tiredness (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "headace": {
+      "label": "Presence of headache (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "bitter_tongue": {
+      "label": "Presence of bitter taste in mouth (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "vomitting": {
+      "label": "Presence of vomiting (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "diarrhea": {
+      "label": "Presence of diarrhea (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "Convulsion": {
+      "label": "Presence of convulsions/seizures (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "Anemia": {
+      "label": "Reduced RBC count or hemoglobin (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "jundice": {
+      "label": "Yellowing of skin and eyes (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "cocacola_urine": {
+      "label": "Dark-colored Coca-Cola urine (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "hypoglycemia": {
+      "label": "Low blood sugar levels (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "prostraction": {
+      "label": "Extreme weakness / unable to sit or stand (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    },
+    "hyperpyrexia": {
+      "label": "Extremely high body temperature > 39\u00b0C (1: Yes, 0: No)",
+      "value": 1,
+      "status": "PRESENT"
+    }
+  }
+}

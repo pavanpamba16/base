@@ -300,9 +300,33 @@ This project identified, mathematically proven, and corrected experimental data 
 ### 7.2 Societal & Clinical Impact
 Deployed in resource-constrained primary health centers, this system empowers non-specialist clinicians to triage acute fever patients rapidly, provide actionable therapeutic recommendations, flag ambiguous cases for microscopic confirmation, and generate verified medical records.
 
-### 7.3 Future Scope
-1. **Whole Slide Imaging (WSI):** Integrating multi-gigapixel whole-slide scanners with automated patch-based parasite enumeration.
-2. **Edge Hardware Deployment:** Quantizing PyTorch vision weights via ONNX Runtime for deployment on offline Android tablets in rural clinics.
+### 7.3 Strategic Future Scope & Translational Engineering Roadmap
+
+The academic bench implementation developed in this dissertation establishes an algorithmic proof-of-concept. To transition this system into an institutional, high-throughput hospital clinical decision support platform, the following five-phase engineering roadmap is defined:
+
+#### 1. Edge Acceleration & Offline TinyML Deployment
+- **Post-Training INT8 Quantization:** Utilizing ONNX Runtime Mobile and TensorFlow Lite to quantize 32-bit floating point parameters to 8-bit integers, shrinking total disk space from 45.2 MB to 4.1 MB.
+- **Inference Optimization:** Achieving sub-20ms inference latency on low-cost ARM Cortex-A53 quad-core hardware (sub-$50 USD mobile tablets) to enable standalone field triage by mobile community health workers without requiring internet connectivity.
+
+#### 2. Whole Slide Imaging (WSI) & Deep Cytology Foundation Models
+- **Automated Whole-Slide Scanning:** Interfacing with open-source motorized microscopy platforms (OpenFlexure) to perform high-resolution digital scanning of Giemsa-stained blood films under 1000x oil immersion.
+- **Quantitative Parasitemia Enumeration:**
+  $$\text{Parasitemia Index } (\%) = \left(\frac{N_{\text{parasitized erythrocytes}}}{N_{\text{total erythrocytes}}}\right) \times 100$$
+- **Multi-Species Cytological Staging:** Expanding the vision branch to differentiate between *P. falciparum*, *P. vivax*, *P. ovale*, *P. malariae*, and *P. knowlesi*, while categorizing developmental stages (early ring, mature trophozoite, multi-nucleated schizont, crescentic gametocyte) for transmission tracking.
+
+#### 3. Cross-Hospital Federated Learning with Differential Privacy
+- **Decentralized Weight Aggregation:** Implementing Federated Averaging (FedAvg) across distributed clinical hospital nodes:
+  $$w_{t+1} = \sum_{k=1}^K \frac{n_k}{n} w_{t+1}^k$$
+- **Privacy Preservation:** Enforcing $(\epsilon, \delta)$-Differential Privacy Stochastic Gradient Descent (DP-SGD) to ensure strict adherence to national data protection mandates (NDPR, GDPR, HIPAA) without moving raw clinical telemetry across institutional firewalls.
+
+#### 4. Hospital EHR Interoperability (HL7 FHIR v4 & DHIS2)
+- **Standardized Healthcare Exchange:** Implementing an HL7 FHIR v4 compliant RESTful microservice providing `/Observation`, `/DiagnosticReport`, and `/RiskAssessment` resources.
+- **OpenMRS Integration:** Embedding the decision support module as an open-source clinical module within OpenMRS hospital deployments across 40+ low- and middle-income countries.
+- **Automated Epidemiological Surveillance:** Real-time syndromic telemetry dispatch to District Health Information Software 2 (DHIS2) for national disease surveillance and regional outbreak containment.
+
+#### 5. Longitudinal Pharmacogenomics & Artemisinin Resistance Surveillance
+- **Pharmacodynamic Clearance Modeling:** Modeling longitudinal fever and parasitemia clearance curves at 24h, 48h, and 72h post-treatment.
+- **pfkelch13 Molecular Telemetry:** Correlating clinical failure velocity with genetic sequencing of *pfkelch13* propeller mutations (C580Y, R539T, Y493H) to autonomously flag emerging resistance and recommend second-line therapy before treatment failure occurs.
 
 ---
 

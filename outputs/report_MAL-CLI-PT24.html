@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Clinical Malaria Diagnostic Dossier - MAL-CLI-PT24</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            color: #2d3748;
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+        .no-print-toolbar {
+            background: #2b6cb0;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .print-btn {
+            background: #ffffff;
+            color: #2b6cb0;
+            border: none;
+            padding: 8px 18px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+        .print-btn:hover {
+            background: #edf2f7;
+            transform: translateY(-1px);
+        }
+        .header {
+            border-bottom: 3px solid #1a365d;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .hospital-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1a365d;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .sub-title {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 3px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+        .badge-red { background-color: #e53e3e; }
+        .badge-green { background-color: #38a169; }
+        .badge-yellow { background-color: #dd6b20; }
+        .grid {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            flex: 1;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            background-color: #f8fafc;
+        }
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #2d3748;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card p {
+            margin: 6px 0;
+            font-size: 13.5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 7px 12px;
+        }
+        th {
+            background-color: #edf2f7;
+            text-align: left;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        .signature-box {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            page-break-inside: avoid;
+        }
+        .sig-line {
+            width: 260px;
+            border-top: 1.5px solid #4a5568;
+            text-align: center;
+            padding-top: 6px;
+            font-size: 12px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+            font-size: 11px;
+            color: #718096;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        @media print {
+            body {
+                padding: 15mm;
+                font-size: 11pt;
+                background: white !important;
+                color: black !important;
+            }
+            .no-print-toolbar {
+                display: none !important;
+            }
+            .card {
+                border: 1px solid #ccc !important;
+                background-color: transparent !important;
+            }
+            th {
+                background-color: #eee !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .badge, .badge-red, .badge-green, .badge-yellow {
+                border: 1px solid #333 !important;
+                color: #000 !important;
+                background: #f0f0f0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            @page {
+                margin: 12mm;
+                size: A4 portrait;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-toolbar">
+        <div>
+            <strong>🏥 Clinical Report Ready for Archival</strong> — Formal Medical Record for Hospital EHR Integration
+        </div>
+        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <div class="header">
+        <div>
+            <div class="hospital-title">NATIONAL EMERGENCY MALARIA TRIAGE CLINIC</div>
+            <div class="sub-title">EXPLAINABLE CLINICAL DECISION SUPPORT & WHO TRIAGE PROTOCOL</div>
+            <div class="sub-title">System Release: v2.4 (Conformal Uncertainty & Multimodal Fusion Architecture)</div>
+        </div>
+        <div style="text-align: right;">
+            <div style="font-size: 14px; font-weight: bold; color: #1a365d;">DOSSIER REF: MAL-CLI-PT24</div>
+            <div class="sub-title">Generated: 2026-10-05 22:58:57</div>
+            <div class="sub-title">Clinician: Dr. On-Duty Medical Officer</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>👤 Patient Demographics & AI Assessment</h3>
+            <p><strong>Patient Identifier:</strong> MAL-CLI-PT24</p>
+            <p><strong>Patient Name / Reference:</strong> Anonymous / Clinical Cohort</p>
+            <p><strong>Patient Age:</strong> 24 years old (Adult Cohort)</p>
+            <p><strong>Primary Model Diagnosis:</strong> <span class="badge badge-green">MALARIA NEGATIVE / UNCOMPLICATED</span></p>
+            <p><strong>Severe Malaria Probability:</strong> <span style="font-size:15px;font-weight:bold;color:#276749;">6.5%</span></p>
+        </div>
+        <div class="card" style="border-left: 5px solid #5cb85c;">
+            <h3>🩺 WHO Clinical Triage Stratification</h3>
+            <p><strong>Urgency Tier:</strong> <span style="color:#5cb85c;font-weight:bold;font-size:14px;">ROUTINE OUTPATIENT CARE (TIER 3)</span></p>
+            <p><strong>WHO Danger Score:</strong> 0 / 20 (0.0%)</p>
+            <p><strong>Mandatory Protocol:</strong> Uncomplicated presentation. Prescribe oral Artemisinin-based Combination Therapy (ACT) if smear/RDT positive.</p>
+        </div>
+    </div>
+
+    
+
+    <div style="margin-top:15px;">
+        <h4 style="margin:0 0 6px 0;font-size:14px;text-transform:uppercase;color:#2d3748;">🚨 WHO Severe Danger Markers Observed:</h4>
+        <ul style="margin:0;padding-left:20px;font-size:13px;"><li style='color:#276749;'>✅ No critical WHO severe red-flag markers detected.</li></ul>
+    </div>
+
+    
+
+    <h4 style="margin:20px 0 6px 0;font-size:14px;text-transform:uppercase;color:#2d3748;">📋 Full Patient Clinical Presentation (16 Verified Biomarkers):</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Clinical Predictor</th>
+                <th style="text-align:center;width:140px;">Recorded Finding</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td style='font-weight:500;'>Presence of fever (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Presence of cold symptoms (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#c53030;font-weight:700;background:#fff5f5;padding:2px 8px;border-radius:4px;border:1px solid #feb2b2;">PRESENT</span></td></tr><tr><td style='font-weight:500;'>Presence of rigor/shivering (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Presence of fatigue or tiredness (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Presence of headache (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Presence of bitter taste in mouth (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#c53030;font-weight:700;background:#fff5f5;padding:2px 8px;border-radius:4px;border:1px solid #feb2b2;">PRESENT</span></td></tr><tr><td style='font-weight:500;'>Presence of vomiting (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Presence of diarrhea (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Presence of convulsions/seizures (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Reduced RBC count or hemoglobin (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Yellowing of skin and eyes (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Dark-colored Coca-Cola urine (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Low blood sugar levels (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Extreme weakness / unable to sit or stand (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr><tr><td style='font-weight:500;'>Extremely high body temperature > 39°C (1: Yes, 0: No)</td><td style='text-align:center;'><span style="color:#718096;background:#f7fafc;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;">ABSENT</span></td></tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top:20px;padding:14px;background:#f7fafc;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;">
+        <strong style="color:#2d3748;">Attending Medical Officer Clinical Directives & Prescription Orders:</strong><br>
+        <p style="margin:6px 0 0 0;color:#4a5568;">Triage evaluation completed via ML Decision Support System.</p>
+    </div>
+
+    <div class="signature-box">
+        <div class="sig-line">
+            Dr. On-Duty Medical Officer<br>
+            <span style="font-weight:normal;font-size:11px;">Attending Medical Officer Signature</span>
+        </div>
+        <div class="sig-line">
+            Laboratory Medical Technologist<br>
+            <span style="font-weight:normal;font-size:11px;">Cytology Smear Verification Signature</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        CONFIDENTIAL MEDICAL RECORD — FOR CLINICAL HEALTHCARE PROFESSIONAL USE ONLY.<br>
+        Synthesized via Stacking Meta-Ensemble Machine Learning, Conformal Prediction Bounds, and Counterfactual Reasoning.<br>
+        In accordance with World Health Organization (WHO) Guidelines for Malaria Case Management.
+    </div>
+
+</body>
+</html>

@@ -34,6 +34,12 @@ import joblib
 import pandas as pd
 import numpy as np
 
+try:
+    from src.clinical_engine import generate_clinical_html_report, generate_patient_json_record
+except Exception:
+    generate_clinical_html_report = None
+    generate_patient_json_record = None
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(BASE_DIR, "saved_models")
 OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
@@ -114,10 +120,11 @@ def display_paper_results():
     print("=" * 80 + "\n")
 
 
-def diagnose_patient(patient_dict: dict, model, scaler):
+def diagnose_patient(patient_dict: dict, model, scaler, export_reports: bool = False):
     """
     Evaluates patient symptoms, calculates ML probability,
     and returns diagnostic status and explanation.
+    Optionally exports official HTML and EHR JSON reports.
     """
     df_patient = pd.DataFrame([patient_dict])[ORDERED_FEATURES]
     df_scaled = pd.DataFrame(scaler.transform(df_patient), columns=ORDERED_FEATURES)
@@ -184,6 +191,32 @@ def diagnose_patient(patient_dict: dict, model, scaler):
         print("  Recommended Clinical Action:")
         print("    * Patient does not exhibit acute severe malaria hallmarks.")
         print("    * Standard outpatient monitoring / investigate other causes of fever.")
+
+    # Auto-export reports if requested or to outputs directory
+    if export_reports or "--export" in sys.argv or "--export-html" in sys.argv or "--export-json" in sys.argv:
+        os.makedirs(OUTPUTS_DIR, exist_ok=True)
+        age = patient_dict.get("age", 35)
+        pid = f"MAL-CLI-PT{age}"
+        if generate_clinical_html_report:
+            html = generate_clinical_html_report(
+                patient_data=patient_dict,
+                model_prediction={"prediction": int(is_malaria), "probability": prob_severe},
+                patient_id=pid
+            )
+            html_path = os.path.join(OUTPUTS_DIR, f"report_{pid}.html")
+            with open(html_path, "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"  [EXPORT] Saved Official HTML Dossier: {html_path}")
+        if generate_patient_json_record:
+            json_rec = generate_patient_json_record(
+                patient_data=patient_dict,
+                model_prediction={"prediction": int(is_malaria), "probability": prob_severe},
+                patient_id=pid
+            )
+            json_path = os.path.join(OUTPUTS_DIR, f"record_{pid}.json")
+            with open(json_path, "w", encoding="utf-8") as f:
+                f.write(json_rec)
+            print(f"  [EXPORT] Saved EHR JSON Record: {json_path}")
 
     print("-" * 70)
     return is_malaria, prob_severe

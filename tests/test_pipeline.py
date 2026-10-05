@@ -25,7 +25,12 @@ from src.advanced_resampling import prepare_leak_free_data, compute_synthetic_fi
 from src.novel_models import get_tuned_base_estimators, build_stacking_meta_ensemble
 from src.conformal_prediction import ConformalMalariaPredictor
 from src.counterfactuals import ClinicalCounterfactualExplainer
-from src.clinical_engine import compute_who_danger_score, generate_clinical_html_report
+from src.clinical_engine import (
+    compute_who_danger_score,
+    generate_clinical_html_report,
+    generate_patient_json_record,
+    generate_batch_html_summary
+)
 from src.multimodal_fusion import MultimodalMalariaClassifier
 
 
@@ -138,8 +143,29 @@ class TestMalariaResearchPipeline(unittest.TestCase):
             doctor_notes="Test clinical verification."
         )
         self.assertIn("EXPLAINABLE CLINICAL MALARIA DECISION SUPPORT SYSTEM", html)
-        self.assertIn("Patient Telemetry", html)
+        self.assertIn("Patient Demographics & Telemetry Assessment", html)
         self.assertIn("Attending Medical Officer Signature", html)
+
+    def test_09_patient_json_and_batch_reports(self):
+        """Verify JSON EHR record and Batch HTML summary generate valid data structures."""
+        patient_dict = {f: 1 if f in ["fever", "Convulsion"] else 0 for f in FEATURE_COLUMNS}
+        patient_dict["age"] = 8
+        json_str = generate_patient_json_record(
+            patient_data=patient_dict,
+            model_prediction={"prediction": 1, "probability": 0.92},
+            patient_id="MAL-TEST-001"
+        )
+        self.assertIn("ClinicalMalariaDiagnosticDossier", json_str)
+        self.assertIn("MAL-TEST-001", json_str)
+        self.assertIn("Pediatric (<=12y)", json_str)
+
+        batch_df = pd.DataFrame([
+            {"age": 28, "Predicted_Status": "Severe Malaria", "Severe_Probability_%": 88.5, "Triage_Priority": "CRITICAL / URGENT"},
+            {"age": 45, "Predicted_Status": "No Malaria", "Severe_Probability_%": 4.2, "Triage_Priority": "ROUTINE"}
+        ])
+        batch_html = generate_batch_html_summary(batch_df)
+        self.assertIn("BATCH CLINICAL TRIAGE REGISTER", batch_html)
+        self.assertIn("#MAL-B-001", batch_html)
 
 
 if __name__ == "__main__":

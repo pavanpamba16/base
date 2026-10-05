@@ -1,0 +1,121 @@
+{
+  "resourceType": "ClinicalMalariaDiagnosticDossier",
+  "dossierVersion": "2.4.0",
+  "createdAt": "2026-10-05T22:58:57.725762",
+  "facility": {
+    "name": "NATIONAL EMERGENCY MALARIA TRIAGE CLINIC",
+    "department": "Emergency & Tropical Medicine"
+  },
+  "patient": {
+    "identifier": "MAL-CLI-PT35",
+    "name": "Anonymous / Clinical Cohort",
+    "age": 35,
+    "ageCohort": "Adult"
+  },
+  "attendingClinician": {
+    "name": "Dr. On-Duty Medical Officer",
+    "directives": "Triage completed via ML Decision Support System."
+  },
+  "modelInference": {
+    "predictionBinary": 0,
+    "predictionLabel": "MALARIA_NEGATIVE_OR_UNCOMPLICATED",
+    "probabilitySevere": 0.012,
+    "riskPercentage": 1.2
+  },
+  "whoTriage": {
+    "tier": "GREEN_ROUTINE",
+    "tierLabel": "ROUTINE OUTPATIENT CARE (TIER 3)",
+    "score": 0,
+    "maxScore": 20,
+    "scorePercentage": 0.0,
+    "detectedFlags": [],
+    "recommendedAction": "Uncomplicated presentation. Prescribe oral Artemisinin-based Combination Therapy (ACT) if smear/RDT positive."
+  },
+  "conformalUncertainty": {
+    "status": "Not Evaluated",
+    "confidence": "95%"
+  },
+  "counterfactualInterventions": [],
+  "clinicalObservations": {
+    "age": {
+      "label": "Age of the patient in years (3 - 77)",
+      "value": 35,
+      "status": "CONTINUOUS_YEARS"
+    },
+    "fever": {
+      "label": "Presence of fever (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "cold": {
+      "label": "Presence of cold symptoms (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "rigor": {
+      "label": "Presence of rigor/shivering (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "fatigue": {
+      "label": "Presence of fatigue or tiredness (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "headace": {
+      "label": "Presence of headache (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "bitter_tongue": {
+      "label": "Presence of bitter taste in mouth (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "vomitting": {
+      "label": "Presence of vomiting (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "diarrhea": {
+      "label": "Presence of diarrhea (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "Convulsion": {
+      "label": "Presence of convulsions/seizures (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "Anemia": {
+      "label": "Reduced RBC count or hemoglobin (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "jundice": {
+      "label": "Yellowing of skin and eyes (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "cocacola_urine": {
+      "label": "Dark-colored Coca-Cola urine (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "hypoglycemia": {
+      "label": "Low blood sugar levels (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "prostraction": {
+      "label": "Extreme weakness / unable to sit or stand (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    },
+    "hyperpyrexia": {
+      "label": "Extremely high body temperature > 39\u00b0C (1: Yes, 0: No)",
+      "value": 0,
+      "status": "ABSENT"
+    }
+  }
+}
