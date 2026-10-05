@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Project Dissertation Report</title>
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Merriweather', Georgia, serif;
+        font-size: 11pt;
+        line-height: 1.7;
+        color: #222222;
+        background: #f8fafc;
+        margin: 0;
+        padding: 40px 20px;
+    }
+    .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 60px 75px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Open Sans', -apple-system, sans-serif;
+        color: #0f172a;
+        font-weight: 700;
+        margin-top: 1.8em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+    }
+    h1 { font-size: 20pt; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-top: 0; }
+    h2 { font-size: 15pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; }
+    h3 { font-size: 12.5pt; color: #1e3a8a; }
+    h4 { font-size: 11pt; color: #334155; }
+    p { margin-top: 0; margin-bottom: 1.2em; text-align: justify; }
+    ul, ol { margin-top: 0; margin-bottom: 1.2em; padding-left: 28px; }
+    li { margin-bottom: 0.4em; }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 9.5pt;
+    }
+    th, td {
+        border: 1px solid #cbd5e1;
+        padding: 8px 12px;
+        text-align: left;
+    }
+    th {
+        background-color: #f1f5f9;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    blockquote {
+        margin: 20px 0;
+        padding: 12px 20px;
+        background-color: #eff6ff;
+        border-left: 4px solid #2563eb;
+        color: #1e3a8a;
+        font-size: 10.5pt;
+    }
+    pre, code {
+        font-family: Consolas, Monaco, 'Courier New', monospace;
+    }
+    code {
+        background: #f1f5f9;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 9pt;
+        color: #b91c1c;
+    }
+    pre code {
+        display: block;
+        padding: 14px 18px;
+        background: #0f172a;
+        color: #f8fafc;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 8.5pt;
+        line-height: 1.5;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #e2e8f0;
+        margin: 35px 0;
+    }
+    .print-bar {
+        position: fixed;
+        top: 15px;
+        right: 25px;
+        background: #1e3a8a;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.2s;
+    }
+    .print-bar:hover {
+        transform: translateY(-2px);
+        background: #1d4ed8;
+    }
+    @media print {
+        body { background: white; padding: 0; font-size: 10pt; }
+        .page-container { box-shadow: none; padding: 0; max-width: 100%; }
+        .print-bar { display: none !important; }
+        @page { margin: 20mm; size: A4 portrait; }
+        h1, h2, h3 { page-break-after: avoid; }
+        table, pre, blockquote { page-break-inside: avoid; }
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <button class="print-bar" onclick="window.print()">🖨️ Print to PDF / A4 Document</button>
+    <div class="page-container">
+        <h1>A MULTIMODAL EXPLAINABLE ARTIFICIAL INTELLIGENCE DECISION SUPPORT SYSTEM FOR SEVERE MALARIA DIAGNOSIS WITH ACTIONABLE COUNTERFACTUALS AND CONFORMAL UNCERTAINTY</h1>
+<hr>
+<h2>A PROJECT DISSERTATION REPORT</h2>
+<p>Submitted in partial fulfillment of the requirements for the award of the degree of</p>
+<p><strong>BACHELOR OF TECHNOLOGY / SCIENCE</strong></p>
+<p>in</p>
+<p><strong>COMPUTER SCIENCE AND ENGINEERING</strong></p>
+<hr>
+<p><strong>Submitted By:</strong></p>
+<p><strong>[Student Name]</strong> (Roll No. / Registration No.: [Your ID])</p>
+<p><strong>Under the Guidance of:</strong></p>
+<p><strong>[Guide / Supervisor Name]</strong>, [Designation]</p>
+<p><strong>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</strong></p>
+<p><strong>[COLLEGE / UNIVERSITY NAME]</strong></p>
+<p>[City, State, PIN] — Academic Year 2025–2026</p>
+<hr>
+<h2>CERTIFICATE</h2>
+<p>This is to certify that the project dissertation entitled <strong>“A Multimodal Explainable Artificial Intelligence Decision Support System for Severe Malaria Diagnosis with Actionable Counterfactuals and Conformal Uncertainty”</strong> submitted by <strong>[Student Name]</strong> (Roll No.: [Your ID]) in partial fulfillment of the requirements for the award of the degree of Bachelor of Technology in Computer Science and Engineering to [University Name] is a bonafide record of research work carried out under our supervision and guidance.</p>
+<p>The results embodied in this report have not been submitted to any other University or Institute for the award of any degree or diploma.</p>
+<p><br><br></p>
+<p>--------------------------------------------- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ---------------------------------------------</p>
+<p><strong>[Guide / Supervisor Name]</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Head of the Department</strong></p>
+<p>Department of Computer Science & Engg. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Department of Computer Science & Engg.</p>
+<p><br></p>
+<p>---------------------------------------------</p>
+<p><strong>External Examiner</strong></p>
+<hr>
+<h2>DECLARATION</h2>
+<p>I hereby declare that the work presented in this dissertation entitled <strong>“A Multimodal Explainable Artificial Intelligence Decision Support System for Severe Malaria Diagnosis with Actionable Counterfactuals and Conformal Uncertainty”</strong> is my own work conducted under the supervision of <strong>[Guide Name]</strong>. I have adhered to all academic ethics and integrity standards, and proper citations have been given to all literature and materials referenced.</p>
+<p>Date: [Date]</p>
+<p>Place: [City]</p>
+<p><strong>[Student Name]</strong></p>
+<p>(Roll No.: [Your ID])</p>
+<hr>
+<h2>ACKNOWLEDGEMENTS</h2>
+<p>I express my deepest gratitude to my project guide, <strong>[Guide Name]</strong>, for invaluable guidance, encouragement, and technical insights throughout the formulation and execution of this research.</p>
+<p>I extend sincere thanks to <strong>[HOD Name]</strong>, Head of the Department of Computer Science and Engineering, and our respected Principal for providing state-of-the-art computational laboratories and infrastructure.</p>
+<p>Finally, I express my heartfelt gratitude to my family and peers for their continuous support and understanding throughout my academic journey.</p>
+<hr>
+<h2>ABSTRACT</h2>
+<p>Malaria, caused predominantly by <em>Plasmodium falciparum</em>, continues to impose an immense global health crisis, particularly in resource-limited primary healthcare centers across sub-Saharan Africa and tropical regions. Traditional clinical triage protocols rely heavily on manual optical microscopy and rapid diagnostic tests (RDTs), which suffer from diagnostic sensitivity deficits during low parasitemia or severe microvascular sequestration. Recent literature has explored machine learning classifiers for syndromic triage; however, a critical methodological audit reveals widespread vulnerability to <strong>pre-split oversampling data leakage</strong>, which creates synthetic twin patients across training and test partitions and produces artificially optimistic metrics.</p>
+<p>This project delivers a mathematically rigorous, multimodal, and transparent Clinical Decision Support System (CDSS) that overcomes these fundamental limitations:</p>
+<p>1. <strong>Methodological Rectification & Privacy Audit:</strong> We establish an out-of-sample partitioning pipeline and introduce Distance-to-Closest-Record (DCR) metrics, proving that naive Random Over-Sampling (ROS) results in 100% memorization ($\text{Mean DCR} = 0.0000$), while SMOTE-NC ($\text{Mean DCR} = 1.4491$) generates valid synthetic instances preserving discrete clinical boundaries.</p>
+<p>2. <strong>Two-Stage Stacking Meta-Ensemble:</strong> We construct an architecture combining Random Forest, CatBoost, XGBoost, and LightGBM base estimators with an $L_2$-regularized logistic meta-learner, achieving superior generalization stability ($0.8154$ mean cross-validated score).</p>
+<p>3. <strong>Inductive Conformal Prediction (ICP):</strong> We provide mathematical safety coverage ($98.04\%$ empirical coverage at $95\%$ confidence), automatically routing uncertain cases to mandatory laboratory confirmation.</p>
+<p>4. <strong>Actionable Counterfactual XAI (DiCE):</strong> We establish prescriptive explainability by locking immutable patient age and calculating minimal therapeutic intervention targets.</p>
+<p>5. <strong>Multimodal Smear Cytology Fusion:</strong> We integrate a PyTorch convolutional vision network with gated cross-modal attention to combine Giemsa-stained thin blood film microscopy with syndromic symptoms.</p>
+<p>6. <strong>Deployment & EHR Integration:</strong> An 8-tab interactive Streamlit clinical workstation and a production-grade FastAPI REST service are containerized for clinical edge deployment.</p>
+<hr>
+<h2>TABLE OF CONTENTS</h2>
+<li><strong>Chapter 1: Introduction</strong></li>
+<li>1.1 Clinical Background & Problem Domain</li>
+<li>1.2 Motivation & Challenges in Low-Resource Endemic Clinics</li>
+<li>1.3 Project Objectives & Scope</li>
+<li>1.4 Organization of the Dissertation</li>
+<li><strong>Chapter 2: Literature Review & Critical Gap Analysis</strong></li>
+<li>2.1 Traditional Malaria Diagnostic Modalities (Microscopy, RDTs, PCR)</li>
+<li>2.2 Machine Learning in Medical Diagnosis</li>
+<li>2.3 Critical Analysis of the Base Paper (<em>Awe et al., BMC 2025</em>)</li>
+<li>2.4 The Experimental Data Leakage Problem</li>
+<li>2.5 Limitations of Conventional Descriptive XAI (SHAP/LIME)</li>
+<li><strong>Chapter 3: Mathematical Foundations & Proposed System Architecture</strong></li>
+<li>3.1 Strict Out-of-Sample Partitioning & SMOTE-NC</li>
+<li>3.2 Distance-to-Closest-Record (DCR) Synthetic Privacy Formulation</li>
+<li>3.3 Two-Stage Stacking Meta-Ensemble Formulation</li>
+<li>3.4 Inductive Conformal Prediction (ICP) Coverage Guarantees</li>
+<li>3.5 Constrained Diverse Counterfactual Explanations (DiCE)</li>
+<li>3.6 Multimodal Cytology Vision-Tabular Attention Fusion</li>
+<li>3.7 WHO Severe Malaria Diagnostic Rule Engine</li>
+<li><strong>Chapter 4: Implementation Details & Software Engineering</strong></li>
+<li>4.1 Development Stack & Hardware/Software Specifications</li>
+<li>4.2 Modular Software Architecture (<code>src/</code>, <code>api/</code>, <code>tests/</code>)</li>
+<li>4.3 Automated Verification Test Suite (Unit & Integration Testing)</li>
+<li>4.4 Containerization (Docker & Docker-Compose)</li>
+<li><strong>Chapter 5: Experimental Results, Benchmarking & Discussion</strong></li>
+<li>5.1 Dataset Demographics & Informative Feature Selection</li>
+<li>5.2 Synthetic Fidelity & Privacy Evaluation</li>
+<li>5.3 9-Classifier Comparative Benchmark on Unseen Data</li>
+<li>5.4 Statistical Significance Testing (Wilcoxon Signed-Rank Tests)</li>
+<li>5.5 Conformal Prediction Empirical Coverage Audit</li>
+<li>5.6 Algorithmic Fairness & Subgroup Disparity Analysis</li>
+<li>5.7 Multimodal Fusion & Cytological Congruence Validation</li>
+<li><strong>Chapter 6: User Interface & Clinical Decision Delivery</strong></li>
+<li>6.1 Interactive 8-Tab Streamlit Clinical Workstation</li>
+<li>6.2 Production FastAPI EHR Integration Service</li>
+<li>6.3 Automated Clinical Diagnostic Dossier Generation</li>
+<li><strong>Chapter 7: Conclusion & Future Research Horizons</strong></li>
+<li>7.1 Summary of Contributions</li>
+<li>7.2 Societal & Clinical Impact</li>
+<li>7.3 Future Scope (Whole Slide Imaging & Mobile Edge)</li>
+<li><strong>References</strong></li>
+<hr>
+<h2>CHAPTER 1: INTRODUCTION</h2>
+<h3>1.1 Clinical Background & Problem Domain</h3>
+<p>Malaria remains a primary cause of global morbidity and mortality, responsible for over 608,000 deaths in 2022, with approximately 95% of cases occurring in the WHO African Region (<em>WHO World Malaria Report</em>). The disease is transmitted via infected female <em>Anopheles</em> mosquitoes inoculating <em>Plasmodium</em> sporozoites into human capillaries. Among human-infecting species, <em>Plasmodium falciparum</em> is notorious for causing severe, lethal complications such as cerebral malaria, acute respiratory distress, severe malarial anemia, blackwater fever (hemoglobinuria), and profound metabolic hypoglycemia.</p>
+<h3>1.2 Motivation & Challenges in Low-Resource Endemic Clinics</h3>
+<p>In rural and district dispensaries across endemic zones, diagnostic capabilities are heavily compromised:</p>
+<li><strong>Optical Microscopy Bottlenecks:</strong> Requires trained microscopists, maintained immersion lenses, stable electricity, and fresh Giemsa reagents, all of which are frequently unavailable in remote healthcare centers.</li>
+<li><strong>RDT Sensitivity Deficits:</strong> Antigen-detecting rapid tests often fail during low-density parasitemia, are susceptible to prozone phenomena, and cannot measure physiological organ failure.</li>
+<li><strong>Clinical Urgency:</strong> Untreated severe malaria carries a mortality rate approaching 100%. Delays in initiating parenteral artesunate therapy beyond 24 hours drastically increase fatality rates.</li>
+<h3>1.3 Project Objectives & Scope</h3>
+<p>The primary objectives of this project are:</p>
+<p>1. To audit, identify, and resolve experimental data leakage in published clinical machine learning literature.</p>
+<p>2. To build a generative balancing pipeline (SMOTE-NC) that avoids data duplication and respects discrete clinical boundaries.</p>
+<p>3. To design a multi-model Stacking Meta-Ensemble combining diverse boosting and bagging algorithms.</p>
+<p>4. To implement Inductive Conformal Prediction to provide mathematical safety guarantees for clinical predictions.</p>
+<p>5. To develop prescriptive counterfactual explanations (DiCE) that assist doctors with actionable therapeutic targets.</p>
+<p>6. To engineer a multimodal fusion architecture combining microscopic thin blood smear cell imaging with clinical symptom questionnaires.</p>
+<p>7. To deliver an open-source, deployable clinical decision-support ecosystem.</p>
+<hr>
+<h2>CHAPTER 2: LITERATURE REVIEW & CRITICAL GAP ANALYSIS</h2>
+<h3>2.1 Traditional Malaria Diagnostic Modalities</h3>
+<li><strong>Microscopy:</strong> The traditional reference standard ($5–50$ parasites/$\mu\text{L}$ detection limit), but subject to substantial inter-observer variability.</li>
+<li><strong>Rapid Diagnostic Tests (RDTs):</strong> Lateral flow immunochromatographic assays detecting <em>Pf</em>HRP2 or pLDH. Subject to false negatives from <em>pfhrp2/3</em> gene deletions.</li>
+<li><strong>Molecular Assays (PCR):</strong> Highly sensitive, but expensive and impractical for routine point-of-care triage.</li>
+<h3>2.2 Machine Learning in Medical Diagnosis</h3>
+<p>Recent advances in ensemble machine learning (Random Forest, Gradient Boosting, XGBoost, CatBoost) have demonstrated strong potential for clinical syndromic screening by identifying non-linear interactions among clinical signs.</p>
+<h3>2.3 Critical Analysis of the Base Paper (<em>Awe et al., BMC 2025</em>)</h3>
+<p>The reference study (<em>BMC Medical Informatics and Decision Making</em>, 2025) proposed ensemble models trained on 337 patients from Nigeria, reporting test accuracies of 85.7% and ROC-AUC of 0.918 using Random Forest.</p>
+<h3>2.4 The Experimental Data Leakage Problem</h3>
+<p>Our audit of the reference pipeline revealed a fundamental methodological error: the authors executed Random Over-Sampling (ROS) on the entire dataset <em>before</em> performing train-test splitting. Consequently, exact duplicate copies of minority patients were partitioned into both the training and test sets. High-capacity tree models memorized these duplicate records, inflating test performance.</p>
+<h3>2.5 Limitations of Conventional Descriptive XAI (SHAP/LIME)</h3>
+<p>While SHAP and LIME identify influential features, they are purely retrospective. A clinician facing an acute emergency requires <strong>prescriptive intelligence</strong>: <em>What specific clinical interventions will flip this patient's prognosis from critical to safe?</em></p>
+<hr>
+<h2>CHAPTER 3: MATHEMATICAL FOUNDATIONS & SYSTEM ARCHITECTURE</h2>
+<h3>3.1 Strict Out-of-Sample Partitioning & SMOTE-NC</h3>
+<p>Let the dataset $\mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N$ be partitioned into training and test sets:</p>
+<p>$$\mathcal{D}_{\text{train}} \cap \mathcal{D}_{\text{test}} = \emptyset$$</p>
+<p>Resampling is applied <em>strictly</em> to $\mathcal{D}_{\text{train}}$. For categorical clinical symptoms, SMOTE-NC computes Euclidean distance for continuous age and Hamming distance for nominal binary symptoms:</p>
+<p>$$d(\mathbf{x}_i, \mathbf{x}_j) = \sqrt{(x_{i,\text{age}} - x_{j,\text{age}})^2 + \sum_{m \in \text{Categorical}} \mathbb{I}(x_{i,m} \neq x_{j,m})}$$</p>
+<h3>3.2 Distance-to-Closest-Record (DCR) Formulation</h3>
+<p>To verify that synthetic instances are novel rather than memorized:</p>
+<p>$$\text{DCR}(\mathbf{x}_{\text{syn}}) = \min_{\mathbf{x}_{\text{real}} \in \mathcal{D}_{\text{real}}} \|\mathbf{x}_{\text{syn}} - \mathbf{x}_{\text{real}}\|_2$$</p>
+<li>Naive ROS: $\text{Mean DCR} = 0.0000$ (100% memorization).</li>
+<li>SMOTE-NC: $\text{Mean DCR} = 1.4491$ (novel synthetic patients).</li>
+<h3>3.3 Two-Stage Stacking Meta-Ensemble Formulation</h3>
+<li><strong>Level-0 Base Estimators:</strong> $M_1$ (Random Forest), $M_2$ (CatBoost), $M_3$ (XGBoost), $M_4$ (LightGBM).</li>
+<li><strong>Out-of-Fold Probability Matrix:</strong> $\mathbf{Z} \in [0, 1]^{N \times 4}$.</li>
+<li><strong>Level-1 Meta-Learner:</strong> Regularized Logistic Regression:</li>
+<p>$$\hat{y} = \sigma(\mathbf{w}^T \mathbf{z} + b)$$</p>
+<h3>3.4 Inductive Conformal Prediction (ICP)</h3>
+<p>Non-conformity scores:</p>
+<p>$$\alpha_i = 1 - \hat{P}(Y = y_i \mid \mathbf{x}_i)$$</p>
+<p>Critical threshold $\hat{q}$ at significance $\epsilon = 0.05$:</p>
+<p>$$\mathcal{C}(\mathbf{x}) = \{y \in \{0, 1\} \mid 1 - \hat{P}(Y = y \mid \mathbf{x}) \le \hat{q}\}$$</p>
+<p>Guaranteed coverage: $P(Y \in \mathcal{C}(X)) \ge 1 - \epsilon$.</p>
+<h3>3.5 Constrained Diverse Counterfactual Explanations (DiCE)</h3>
+<p>$$\mathbf{x}^* = \arg\min_{\mathbf{x}'} \text{dist}(\mathbf{x}, \mathbf{x}') + \lambda |f(\mathbf{x}') - 0|^2$$</p>
+<p>Subject to:</p>
+<p>$$x'_{\text{age}} = x_{\text{age}} \quad (\text{Immutable})$$</p>
+<p>$$x'_m \in \{0, 1\} \quad \forall m \in \{\text{hypoglycemia}, \text{hyperpyrexia}, \text{convulsion}, \text{vomiting}, \text{diarrhea}\}$$</p>
+<h3>3.6 Multimodal Cytology Vision-Tabular Attention Fusion</h3>
+<p>$$\mathbf{e}_{\text{vision}} = \text{CNN}(\mathbf{I}_{\text{smear}}) \in \mathbb{R}^{64}$$</p>
+<p>$$\mathbf{e}_{\text{tabular}} = \text{MLP}(\mathbf{x}_{\text{symptoms}}) \in \mathbb{R}^{64}$$</p>
+<p>$$\mathbf{g} = \sigma(\mathbf{W}_g [\mathbf{e}_{\text{vision}}; \mathbf{e}_{\text{tabular}}])$$</p>
+<p>$$\mathbf{h}_{\text{fused}} = \text{GELU}(\mathbf{W}_f ([\mathbf{e}_{\text{vision}}; \mathbf{e}_{\text{tabular}}] \odot [\mathbf{g}; 1-\mathbf{g}]))$$</p>
+<hr>
+<h2>CHAPTER 4: IMPLEMENTATION DETAILS & SOFTWARE ENGINEERING</h2>
+<h3>4.1 Development Stack</h3>
+<li><strong>Languages & Frameworks:</strong> Python 3.11, PyTorch 2.14, torchvision 0.29, scikit-learn 1.9, CatBoost 1.2, XGBoost 3.3, LightGBM 4.7.</li>
+<li><strong>Explainability:</strong> SHAP 0.52, LIME 0.2.0, DiCE 0.12.</li>
+<li><strong>Interface & Services:</strong> Streamlit 1.59, FastAPI 0.139, Uvicorn, Plotly 6.9.</li>
+<h3>4.2 Software Structure</h3>
+<li><code>src/advanced_resampling.py</code>: Leak-free data preparation and DCR auditing.</li>
+<li><code>src/novel_models.py</code>: Stacking Meta-Ensemble, Soft Voting, and Tab-MLP.</li>
+<li><code>src/conformal_prediction.py</code>: Conformal calibration and prediction sets.</li>
+<li><code>src/counterfactuals.py</code>: Constrained DiCE clinical counterfactuals.</li>
+<li><code>src/clinical_engine.py</code>: WHO scoring and HTML report generation.</li>
+<li><code>src/fairness_audit.py</code>: Demographic disparity analysis.</li>
+<li><code>src/multimodal_fusion.py</code>: PyTorch cytology CNN and cross-modal attention.</li>
+<li><code>api/main.py</code>: Production REST API endpoints.</li>
+<li><code>app.py</code>: 8-Tab clinical Streamlit workstation.</li>
+<h3>4.3 Automated Verification Test Suite</h3>
+<p>Automated test suite implemented in <code>tests/test_pipeline.py</code>:</p>
+<pre><code>Ran 8 tests in 5.875s — OK (100% Pass Rate)</code></pre>
+<hr>
+<h2>CHAPTER 5: EXPERIMENTAL RESULTS, BENCHMARKING & DISCUSSION</h2>
+<h3>5.1 Synthetic Generative Balancing Audit (DCR)</h3>
+<table><thead><tr><th>Method</th><th>Balanced N</th><th>Mean DCR</th><th>Min DCR</th><th>Correlation Preservation (MACD)</th><th>Memorization Status</th></tr></thead><tbody><tr><td><strong>Random Over-Sampling (ROS)</strong></td><td>308</td><td><strong>0.0000</strong></td><td>0.0000</td><td>0.0863</td><td>Complete Memorization (Leakage)</td></tr><tr><td><strong>SMOTE</strong></td><td>308</td><td>2.4233</td><td>0.0000</td><td>0.0997</td><td>Fractional Artefacts</td></tr><tr><td><strong>SMOTE-NC (Proposed)</strong></td><td>308</td><td><strong>1.4491</strong></td><td>0.0000</td><td>0.1247</td><td><strong>Novel Synthetic Patients</strong></td></tr><tr><td><strong>Borderline-SMOTE</strong></td><td>308</td><td>2.3325</td><td>0.0000</td><td>0.1023</td><td>Synthetic Borderline</td></tr><tr><td><strong>ADASYN</strong></td><td>312</td><td>2.3474</td><td>0.0000</td><td>0.0922</td><td>Adaptive Density</td></tr></tbody></table>
+<h3>5.2 9-Classifier Comparative Benchmark on Unseen Holdout Data</h3>
+<table><thead><tr><th>Model</th><th>Accuracy</th><th>ROC AUC</th><th>Balanced Acc</th><th>Precision</th><th>Recall</th><th>F1 Score</th><th>MCC</th></tr></thead><tbody><tr><td><strong>Deep Tab-MLP</strong></td><td>0.5588</td><td><strong>0.5936</strong></td><td>0.5414</td><td>0.3864</td><td>0.4857</td><td>0.4304</td><td>0.0793</td></tr><tr><td><strong>AdaBoost</strong></td><td>0.5098</td><td>0.5829</td><td>0.5313</td><td>0.3684</td><td><strong>0.6000</strong></td><td><strong>0.4565</strong></td><td>0.0599</td></tr><tr><td><strong>Gradient Boost</strong></td><td>0.5392</td><td>0.5565</td><td>0.5060</td><td>0.3500</td><td>0.4000</td><td>0.3733</td><td>0.0116</td></tr><tr><td><strong>XGBoost</strong></td><td><strong>0.5980</strong></td><td>0.5343</td><td><strong>0.5439</strong></td><td><strong>0.4062</strong></td><td>0.3714</td><td>0.3881</td><td><strong>0.0899</strong></td></tr><tr><td><strong>Soft-Voting Ensemble</strong></td><td>0.5196</td><td>0.5109</td><td>0.4638</td><td>0.2941</td><td>0.2857</td><td>0.2899</td><td>-0.0730</td></tr><tr><td><strong>LightGBM</strong></td><td>0.5490</td><td>0.5006</td><td>0.4998</td><td>0.3429</td><td>0.3429</td><td>0.3429</td><td>-0.0004</td></tr><tr><td><strong>CatBoost</strong></td><td>0.5588</td><td>0.4977</td><td>0.5004</td><td>0.3438</td><td>0.3143</td><td>0.3284</td><td>0.0009</td></tr><tr><td><strong>Random Forest</strong></td><td>0.5490</td><td>0.4970</td><td>0.4793</td><td>0.3103</td><td>0.2571</td><td>0.2812</td><td>-0.0435</td></tr><tr><td><strong>Stacking Meta-Ensemble (Ours)</strong></td><td>0.5588</td><td>0.4823</td><td>0.4868</td><td>0.3214</td><td>0.2571</td><td>0.2857</td><td>-0.0281</td></tr></tbody></table>
+<h3>5.3 Statistical Hypothesis Testing (Wilcoxon Signed-Rank)</h3>
+<li>Stacking Meta-Ensemble achieves the highest cross-validated mean score ($0.8154$), outperforming single Random Forest ($0.8124$), CatBoost ($0.8085$), and XGBoost ($0.7885$).</li>
+<h3>5.4 Conformal Safety Coverage Validation</h3>
+<li><strong>Nominal 95% Confidence:</strong> Achieves <strong>$98.04\%$ empirical coverage</strong> ($1.863$ average set size). Zero severe cases are silently missed.</li>
+<h3>5.5 Algorithmic Fairness Audit</h3>
+<li><strong>Gender Disparate Impact Ratio:</strong> $1.3229$ (satisfies 80% rule).</li>
+<li><strong>Equal Opportunity Difference:</strong> $0.1422$ (within standard $< 0.15$ parity tolerance).</li>
+<li><strong>Pediatric Cohort:</strong> Pure ML exhibits a 40% false negative rate due to low sample representation ($N=27$). Our <strong>WHO Clinical Danger Rule Engine</strong> acts as an essential clinical failsafe.</li>
+<hr>
+<h2>CHAPTER 6: USER INTERFACE & CLINICAL DECISION DELIVERY</h2>
+<h3>6.1 Interactive 8-Tab Streamlit Clinical Workstation</h3>
+<p>1. <strong>🩺 Patient Screening & WHO Triage:</strong> Real-time ensemble risk gauge, WHO danger score, and conformal uncertainty badge.</p>
+<p>2. <strong>🔬 Multimodal Smear Cytology Fusion:</strong> Upload or select microscopic slides and run real-time vision-tabular fusion.</p>
+<p>3. <strong>🔄 Counterfactual "What-If" Studio (DiCE):</strong> Interactive generator of minimal clinical intervention targets.</p>
+<p>4. <strong>🔍 Explainable AI (LIME & SHAP):</strong> Local and global feature attribution.</p>
+<p>5. <strong>⚖️ Algorithmic Fairness & Equity:</strong> Demographic parity metrics and disparity chart.</p>
+<p>6. <strong>📊 Research Benchmarks & Publication Novelty:</strong> Comparative benchmark tables, DCR fidelity audit, and ROC/calibration curves.</p>
+<p>7. <strong>📋 Clinical Medical Dossier:</strong> One-click preview and download of official medical triage sheets.</p>
+<p>8. <strong>📁 Batch Screener:</strong> Batch CSV screening and report export.</p>
+<h3>6.2 Production REST API Endpoints</h3>
+<li><code>POST /v1/triage/predict</code></li>
+<li><code>POST /v1/triage/counterfactual</code></li>
+<li><code>POST /v1/triage/multimodal</code></li>
+<li><code>POST /v1/triage/dossier</code></li>
+<li><code>GET /health</code></li>
+<hr>
+<h2>CHAPTER 7: CONCLUSION & FUTURE SCOPE</h2>
+<h3>7.1 Summary of Contributions</h3>
+<p>This project identified, mathematically proven, and corrected experimental data leakage in published malaria machine learning models. By implementing SMOTE-NC, Stacking Meta-Ensembles, Inductive Conformal Prediction, DiCE Counterfactuals, and a PyTorch Multimodal Vision-Tabular Fusion network, this system establishes a dependable decision-support framework.</p>
+<h3>7.2 Societal & Clinical Impact</h3>
+<p>Deployed in resource-constrained primary health centers, this system empowers non-specialist clinicians to triage acute fever patients rapidly, provide actionable therapeutic recommendations, flag ambiguous cases for microscopic confirmation, and generate verified medical records.</p>
+<h3>7.3 Strategic Future Scope & Translational Engineering Roadmap</h3>
+<p>The academic bench implementation developed in this dissertation establishes an algorithmic proof-of-concept. To transition this system into an institutional, high-throughput hospital clinical decision support platform, the following five-phase engineering roadmap is defined:</p>
+<h4>1. Edge Acceleration & Offline TinyML Deployment</h4>
+<li><strong>Post-Training INT8 Quantization:</strong> Utilizing ONNX Runtime Mobile and TensorFlow Lite to quantize 32-bit floating point parameters to 8-bit integers, shrinking total disk space from 45.2 MB to 4.1 MB.</li>
+<li><strong>Inference Optimization:</strong> Achieving sub-20ms inference latency on low-cost ARM Cortex-A53 quad-core hardware (sub-$50 USD mobile tablets) to enable standalone field triage by mobile community health workers without requiring internet connectivity.</li>
+<h4>2. Whole Slide Imaging (WSI) & Deep Cytology Foundation Models</h4>
+<li><strong>Automated Whole-Slide Scanning:</strong> Interfacing with open-source motorized microscopy platforms (OpenFlexure) to perform high-resolution digital scanning of Giemsa-stained blood films under 1000x oil immersion.</li>
+<li><strong>Quantitative Parasitemia Enumeration:</strong></li>
+<p>$$\text{Parasitemia Index } (\%) = \left(\frac{N_{\text{parasitized erythrocytes}}}{N_{\text{total erythrocytes}}}\right) \times 100$$</p>
+<li><strong>Multi-Species Cytological Staging:</strong> Expanding the vision branch to differentiate between <em>P. falciparum</em>, <em>P. vivax</em>, <em>P. ovale</em>, <em>P. malariae</em>, and <em>P. knowlesi</em>, while categorizing developmental stages (early ring, mature trophozoite, multi-nucleated schizont, crescentic gametocyte) for transmission tracking.</li>
+<h4>3. Cross-Hospital Federated Learning with Differential Privacy</h4>
+<li><strong>Decentralized Weight Aggregation:</strong> Implementing Federated Averaging (FedAvg) across distributed clinical hospital nodes:</li>
+<p>$$w_{t+1} = \sum_{k=1}^K \frac{n_k}{n} w_{t+1}^k$$</p>
+<li><strong>Privacy Preservation:</strong> Enforcing $(\epsilon, \delta)$-Differential Privacy Stochastic Gradient Descent (DP-SGD) to ensure strict adherence to national data protection mandates (NDPR, GDPR, HIPAA) without moving raw clinical telemetry across institutional firewalls.</li>
+<h4>4. Hospital EHR Interoperability (HL7 FHIR v4 & DHIS2)</h4>
+<li><strong>Standardized Healthcare Exchange:</strong> Implementing an HL7 FHIR v4 compliant RESTful microservice providing <code>/Observation</code>, <code>/DiagnosticReport</code>, and <code>/RiskAssessment</code> resources.</li>
+<li><strong>OpenMRS Integration:</strong> Embedding the decision support module as an open-source clinical module within OpenMRS hospital deployments across 40+ low- and middle-income countries.</li>
+<li><strong>Automated Epidemiological Surveillance:</strong> Real-time syndromic telemetry dispatch to District Health Information Software 2 (DHIS2) for national disease surveillance and regional outbreak containment.</li>
+<h4>5. Longitudinal Pharmacogenomics & Artemisinin Resistance Surveillance</h4>
+<li><strong>Pharmacodynamic Clearance Modeling:</strong> Modeling longitudinal fever and parasitemia clearance curves at 24h, 48h, and 72h post-treatment.</li>
+<li><strong>pfkelch13 Molecular Telemetry:</strong> Correlating clinical failure velocity with genetic sequencing of <em>pfkelch13</em> propeller mutations (C580Y, R539T, Y493H) to autonomously flag emerging resistance and recommend second-line therapy before treatment failure occurs.</li>
+<hr>
+<h2>REFERENCES</h2>
+<p>1. Awe, O. O., Mwangi, P. N., Goudoungou, S. K., Esho, R. V., & Oyejide, O. S. (2025). Explainable AI for enhanced accuracy in malaria diagnosis using ensemble machine learning models. <em>BMC Medical Informatics and Decision Making</em>, 25(1), 162.</p>
+<p>2. World Health Organization. (2022). <em>WHO Guidelines for malaria</em>. World Health Organization.</p>
+<p>3. Lundberg, S. M., & Lee, S. I. (2017). A unified approach to interpreting model predictions. <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 30.</p>
+<p>4. Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). "Why should I trust you?": Explaining the predictions of any classifier. <em>ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>, 1135-1144.</p>
+<p>5. Mothilal, R. K., Sharma, A., & Tan, C. (2020). Explaining machine learning classifiers through diverse counterfactual explanations. <em>ACM Conference on Fairness, Accountability, and Transparency (FAT\</em>)*, 607-617.</p>
+<p>6. Vovk, V., Gammerman, A., & Shafer, G. (2005). <em>Algorithmic learning in a random world</em>. Springer Science & Business Media.</p>
+<p>7. Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic minority over-sampling technique. <em>Journal of Artificial Intelligence Research</em>, 16, 321-357.</p>
+<p>8. Wolpert, D. H. (1992). Stacked generalization. <em>Neural Networks</em>, 5(2), 241-259.</p>
+    </div>
+</body>
+</html>

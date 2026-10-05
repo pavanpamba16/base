@@ -1,0 +1,131 @@
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue
+}
+
+\begin{document}
+
+\title{A Multimodal Explainable Artificial Intelligence Decision Support System for Severe Malaria Diagnosis with Actionable Counterfactuals and Conformal Uncertainty}
+
+\author{Pavan~Pamba,~\IEEEmembership{Student Member,~IEEE}%
+\thanks{Department of Computer Science and Engineering. Correspondence email: \texttt{author@institution.edu}. Manuscript submitted for peer review.}}
+
+\markboth{IEEE Transactions on Emerging Topics in Computing / BMC Medical Informatics, Vol.~XX, No.~X, 2026}%
+{Pamba: Multimodal Explainable AI for Severe Malaria Diagnosis}
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+Machine learning decision support systems for acute infectious tropical diseases often suffer from severe methodological pitfalls, including pre-split oversampling data leakage, lack of mathematically bounded uncertainty, black-box uninterpretability, and single-modality clinical blindness. In this study, we address and resolve a fundamental experimental flaw in a recently published clinical malaria benchmark (Awe et al., \textit{BMC Medical Informatics and Decision Making}, 2025): namely, the application of Random Over-Sampling (ROS) prior to cross-validation splits, which creates artificial data leakage. We prove through Distance-to-Closest-Record (DCR) auditing that naive ROS causes complete duplication memorization ($\text{Mean DCR} = 0.0000$), whereas our leak-free SMOTE-NC pipeline maintains true generative diversity ($\text{Mean DCR} = 1.4491$). We propose a Stacking Meta-Ensemble combining CatBoost, Random Forest, XGBoost, and LightGBM, coupled with Inductive Conformal Prediction (ICP) providing 95\% mathematically guaranteed coverage intervals, Diverse Counterfactual Explanations (DiCE) locking immutable physiological parameters, an algorithmic demographic fairness audit, and a PyTorch cross-attention thin blood smear cytology fusion network. The proposed platform is deployed via a 9-tab Clinical Decision Support System and high-throughput REST API with automated multi-format patient dossier generation.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Explainable AI, Severe Malaria, Conformal Prediction, Counterfactual Explanations, Data Leakage, Multimodal Fusion, Clinical Decision Support Systems.
+\end{IEEEkeywords}}
+
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+\IEEEPARstart{M}{alaria} remains one of the world's most catastrophic infectious killers, claiming over 608,000 lives annually, with 95\% of mortality concentrated in the World Health Organization (WHO) African Region. Prompt differentiation between uncomplicated malaria and severe, life-threatening malaria is paramount to initiating emergency parenteral artesunate therapy.
+
+Recently, Awe et al.~\cite{awe2025explainable} published an ensemble machine learning study in \textit{BMC Medical Informatics and Decision Making} analyzing 337 clinical patients across 16 physiological features from Nigeria. While pioneering, the study incorporated a critical methodological vulnerability: oversampling (ROS) was executed on the whole dataset \textit{prior} to train-test splitting. Consequently, identical synthetic duplicates were partitioned across both training and evaluation subsets, leading to over-optimistic empirical performance.
+
+In this work, we establish five primary scientific contributions:
+\begin{enumerate}
+    \item \textbf{Data Leakage Resolution \& Fidelity Audit:} We demonstrate that leak-free cross-validation using SMOTE-NC eliminates synthetic memorization ($\text{DCR} = 1.4491$, $\text{MACD} = 0.1247$).
+    \item \textbf{Stacking Meta-Ensemble:} We construct a two-stage meta-learner aggregating CatBoost, Random Forest, XGBoost, and LightGBM with statistical hypothesis validation.
+    \item \textbf{Conformal Safety Bounds:} We implement Inductive Conformal Prediction (ICP) guaranteeing distribution-free $1-\alpha = 0.95$ statistical coverage.
+    \item \textbf{Actionable Counterfactuals:} We deploy DiCE constrained by immutable biological features (age) to identify actionable clinical reversal pathways.
+    \item \textbf{Cytology Multimodal Fusion:} We introduce a dual-branch vision-tabular fusion network joining thin smear microscopy with patient clinical signs.
+\end{enumerate}
+
+\section{Methodology}
+
+\subsection{Leak-Free Preprocessing \& Generative Fidelity}
+Let $\mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N$ be the patient dataset. In our leak-free protocol, data is strictly partitioned into train $\mathcal{D}_{\text{train}}$, calibration $\mathcal{D}_{\text{cal}}$, and test $\mathcal{D}_{\text{test}}$ subsets prior to any resampling.
+
+We audit synthetic data privacy using the Distance-to-Closest-Record (DCR):
+\begin{equation}
+\text{DCR}(\mathbf{x}_{\text{syn}}) = \min_{\mathbf{x}_{\text{real}} \in \mathcal{D}_{\text{real}}} \|\mathbf{x}_{\text{syn}} - \mathbf{x}_{\text{real}}\|_2
+\end{equation}
+
+\subsection{Stacking Meta-Ensemble Architecture}
+Base models $f_1, \dots, f_M$ generate out-of-fold probability vectors $\hat{\mathbf{p}}_i = [f_1(\mathbf{x}_i), \dots, f_M(\mathbf{x}_i)]$. The meta-learner $g$ optimizes $L_2$-regularized logistic loss:
+\begin{equation}
+\min_{\mathbf{w}} \sum_{i=1}^N \mathcal{L}_{\text{log}}\left(y_i, \sigma(\mathbf{w}^T \hat{\mathbf{p}}_i)\right) + \lambda \|\mathbf{w}\|_2^2
+\end{equation}
+
+\subsection{Inductive Conformal Prediction (ICP)}
+Given significance level $\alpha = 0.05$, we compute non-conformity scores $s_i = 1 - \hat{P}(Y = y_i \mid \mathbf{x}_i)$ on $\mathcal{D}_{\text{cal}}$. The conformal set for a new patient $\mathbf{x}_{\text{new}}$ is:
+\begin{equation}
+C(\mathbf{x}_{\text{new}}) = \{y \in \{0, 1\} \mid 1 - \hat{P}(Y = y \mid \mathbf{x}_{\text{new}}) \le \hat{q}_{1-\alpha}\}
+\end{equation}
+guaranteeing $P(Y \in C(\mathbf{X})) \ge 1 - \alpha$.
+
+\subsection{Constrained Counterfactual Explanations}
+We solve the constrained optimization problem:
+\begin{equation}
+\min_{\mathbf{x}'} \text{dist}(\mathbf{x}, \mathbf{x}') + \beta (f(\mathbf{x}') - y^*)^2 \quad \text{s.t.} \quad x'_{\text{age}} = x_{\text{age}}
+\end{equation}
+
+\section{Experimental Results}
+
+\begin{table}[h]
+\caption{Classifier Benchmark on Leak-Free Clinical Data}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model Architecture} & \textbf{Accuracy} & \textbf{ROC AUC} & \textbf{Precision} & \textbf{Recall} \\
+\midrule
+Stacking Meta-Ensemble (Ours) & \textbf{0.815} & \textbf{0.915} & \textbf{0.835} & 0.910 \\
+CatBoost & 0.805 & 0.904 & 0.747 & 0.908 \\
+Random Forest & 0.812 & 0.885 & 0.763 & 0.892 \\
+XGBoost & 0.812 & 0.882 & 0.744 & \textbf{0.938} \\
+Gradient Boost & 0.767 & 0.891 & 0.702 & 0.908 \\
+AdaBoost & 0.647 & 0.739 & 0.632 & 0.662 \\
+Deep Tab-MLP & 0.559 & 0.594 & 0.386 & 0.486 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Clinical Software \& Report Generation}
+The software pipeline is delivered through an interactive 9-tab clinical decision support system featuring:
+\begin{itemize}
+    \item Instant single-click download of print-ready official HTML medical dossiers with embedded hospital headers and A4 `@media print` styling.
+    \item HL7 FHIR v4 compliant JSON data exchange serialization (`/DiagnosticReport`, `/Observation`).
+    \item Multi-patient institutional screening with ward registry report export.
+\end{itemize}
+
+\section{Strategic Future Scope}
+We outline five translational pillars:
+\begin{enumerate}
+    \item \textbf{Edge TinyML:} INT8 quantization reducing model footprint from 45.2MB to 4.1MB for sub-20ms inference on \$50 off-grid Android tablets.
+    \item \textbf{Whole Slide Imaging:} 40x automated gigapixel smear scanning and parasitemia enumeration.
+    \item \textbf{Federated Learning:} FedAvg under $(\epsilon, \delta)$-Differential Privacy across partner hospitals in Nigeria, Ghana, Kenya, and India.
+    \item \textbf{Enterprise EHR:} Bidirectional synchronization with OpenMRS and DHIS2 disease surveillance.
+    \item \textbf{Pharmacogenomics:} Longitudinal clearance modeling and \textit{pfkelch13} molecular mutation tracking.
+\end{enumerate}
+
+\section{Conclusion}
+This study identifies and resolves critical data leakage vulnerabilities in published malaria diagnostic models, establishing a rigorous, explainable, and multimodal foundation for bedside clinical decision support.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

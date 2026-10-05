@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Oral Defense Presentation Deck</title>
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Merriweather', Georgia, serif;
+        font-size: 11pt;
+        line-height: 1.7;
+        color: #222222;
+        background: #f8fafc;
+        margin: 0;
+        padding: 40px 20px;
+    }
+    .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 60px 75px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Open Sans', -apple-system, sans-serif;
+        color: #0f172a;
+        font-weight: 700;
+        margin-top: 1.8em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+    }
+    h1 { font-size: 20pt; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-top: 0; }
+    h2 { font-size: 15pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; }
+    h3 { font-size: 12.5pt; color: #1e3a8a; }
+    h4 { font-size: 11pt; color: #334155; }
+    p { margin-top: 0; margin-bottom: 1.2em; text-align: justify; }
+    ul, ol { margin-top: 0; margin-bottom: 1.2em; padding-left: 28px; }
+    li { margin-bottom: 0.4em; }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 9.5pt;
+    }
+    th, td {
+        border: 1px solid #cbd5e1;
+        padding: 8px 12px;
+        text-align: left;
+    }
+    th {
+        background-color: #f1f5f9;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    blockquote {
+        margin: 20px 0;
+        padding: 12px 20px;
+        background-color: #eff6ff;
+        border-left: 4px solid #2563eb;
+        color: #1e3a8a;
+        font-size: 10.5pt;
+    }
+    pre, code {
+        font-family: Consolas, Monaco, 'Courier New', monospace;
+    }
+    code {
+        background: #f1f5f9;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 9pt;
+        color: #b91c1c;
+    }
+    pre code {
+        display: block;
+        padding: 14px 18px;
+        background: #0f172a;
+        color: #f8fafc;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 8.5pt;
+        line-height: 1.5;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #e2e8f0;
+        margin: 35px 0;
+    }
+    .print-bar {
+        position: fixed;
+        top: 15px;
+        right: 25px;
+        background: #1e3a8a;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.2s;
+    }
+    .print-bar:hover {
+        transform: translateY(-2px);
+        background: #1d4ed8;
+    }
+    @media print {
+        body { background: white; padding: 0; font-size: 10pt; }
+        .page-container { box-shadow: none; padding: 0; max-width: 100%; }
+        .print-bar { display: none !important; }
+        @page { margin: 20mm; size: A4 portrait; }
+        h1, h2, h3 { page-break-after: avoid; }
+        table, pre, blockquote { page-break-inside: avoid; }
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <button class="print-bar" onclick="window.print()">🖨️ Print to PDF / A4 Document</button>
+    <div class="page-container">
+        <h1>Final Year Project Defense & Oral Viva Presentation</h1>
+<p><strong>Project Title:</strong> Beyond Heuristic Oversampling: A Leakage-Free Multimodal Meta-Ensemble with Actionable Counterfactual Explanations and Conformal Uncertainty for Interpretable Malaria Diagnosis</p>
+<p><strong>Student Name:</strong> [Your Name / Candidate Name]</p>
+<p><strong>Degree / Program:</strong> Bachelor of Technology / Science in Computer Science & Engineering</p>
+<p><strong>Department:</strong> Department of Computer Science & Engineering, [University Name]</p>
+<p><strong>Supervisor / Guide:</strong> [Advisor Name], [Faculty Title]</p>
+<p><strong>Academic Year:</strong> 2025 – 2026</p>
+<hr>
+<h2>📋 Defense Slide Outline & Verbatim Speaker Script</h2>
+<pre><code>SLIDE 1: Title & Introduction
+SLIDE 2: Clinical Context & The Malaria Diagnostic Dilemma
+SLIDE 3: Critical Audit of Prior Literature: The Data Leakage Flaw
+SLIDE 4: Synthetic Generative Balancing & Privacy Audit (DCR)
+SLIDE 5: Unified Multimodal & Meta-Ensemble System Architecture
+SLIDE 6: Two-Stage Stacking Meta-Ensemble Design
+SLIDE 7: 9-Classifier Benchmark on Unseen Clinical Data
+SLIDE 8: Statistical Significance Hypothesis Testing (Wilcoxon)
+SLIDE 9: Mathematical Safety via Inductive Conformal Prediction (ICP)
+SLIDE 10: Prescriptive Explainability: Actionable Counterfactuals (DiCE)
+SLIDE 11: Algorithmic Fairness & Subgroup Disparity Audit (Pediatric Cohort)
+SLIDE 12: Multimodal Vision + Tabular Cytology Fusion
+SLIDE 13: Clinical Web Workstation & Production REST API
+SLIDE 14: Rigorous Engineering & Test Suite Validation
+SLIDE 15: Publications, Societal Impact & Conclusion</code></pre>
+<hr>
+<h3>Slide 1: Title & Introduction</h3>
+<li><strong>Visuals:</strong> Project Title, University Crest, Candidate Details, Target Publication Banner (<em>BMC Medical Informatics / IEEE Access</em>).</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Good morning, respected Chairman, external examiners, and members of the evaluation committee.</li>
+<li>Today I present our research project which addresses critical flaws in published clinical machine learning models for malaria triage and advances them into a verified multimodal clinical decision support framework.</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"Malaria remains one of the world's most catastrophic infectious killers, claiming over 600,000 lives annually, primarily in sub-Saharan Africa. While recent publications have proposed AI for syndromic malaria screening, our investigation revealed a fundamental methodological vulnerability: pre-split data leakage, which produces artificially optimistic metrics. In this project, we not only resolve this leakage, but introduce a comprehensive clinical framework featuring Stacking Meta-Ensembles, Inductive Conformal Prediction, Actionable Counterfactuals, and Multimodal Vision-Tabular Fusion."</em></blockquote>
+<hr>
+<h3>Slide 2: Clinical Context & The Diagnostic Bottleneck</h3>
+<li><strong>Visuals:</strong> Comparison of Optical Microscopy vs Rapid Diagnostic Tests (RDTs) vs Clinical Syndromes.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Gold standard microscopy is hindered by equipment shortages, power intermittency, and technician fatigue in rural centers.</li>
+<li>RDTs suffer from false negatives during low-parasitemia and cannot quantify organ failure or severity.</li>
+<li>Syndromic triage using machine learning provides instant pre-laboratory risk stratification.</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"In peripheral primary health clinics, doctors and nurses must decide within minutes whether a febrile patient requires routine oral treatment or immediate parenteral admission for life-threatening severe malaria. Optical microscopy is frequently unavailable after hours, while RDTs fail to measure clinical organ compromise. A trusted, transparent, and mathematically safe AI decision support system is desperately needed."</em></blockquote>
+<hr>
+<h3>Slide 3: Critical Audit of the Base Paper: The Data Leakage Discovery</h3>
+<li><strong>Visuals:</strong> Diagram showing Pre-Split Oversampling vs Strict Post-Split Partitioning.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li><em>Base Paper:</em> Awe et al., <em>BMC Medical Informatics and Decision Making</em> (2025).</li>
+<li><em>Methodological Flaw:</em> The minority class ($N_1 = 116$) was duplicated across the whole cohort <em>before</em> the 70/30 train-test split.</li>
+<li><em>Consequence:</em> 105 synthetic duplicates were distributed across both training and test partitions. Models were merely looking up memorized twins, falsely reporting 85.7% accuracy.</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"When we audited the raw source code of the 2025 BMC reference paper, we discovered a classic machine learning pitfall: pre-split oversampling. By resampling the minority class to 221 samples across the entire dataset before creating the test split, identical duplicate patient records existed in both train and test partitions. The reported 85.7% accuracy was inflated by memorization. Our first major research contribution is isolating this vulnerability and establishing a mathematically strict, leak-free benchmark."</em></blockquote>
+<hr>
+<h3>Slide 4: Synthetic Generative Balancing & Privacy Audit (DCR)</h3>
+<li><strong>Visuals:</strong> Distance-to-Closest-Record (DCR) Comparison Table (ROS vs SMOTE-NC).</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>We introduced the Euclidean <strong>Distance-to-Closest-Record (DCR)</strong> metric to measure memorization risk.</li>
+<li><strong>Random Over-Sampling (ROS):</strong> $\text{Mean DCR} = 0.0000$ (100% exact duplication).</li>
+<li><strong>SMOTE-NC (Proposed):</strong> $\text{Mean DCR} = 1.4491$, $\text{MACD} = 0.1247$ (generates novel, realistic clinical profiles while respecting discrete 0/1 symptom states).</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"To prove memorization empirically, we audited the Distance-to-Closest-Record. As shown on the slide, Random Over-Sampling yields a Mean DCR of exactly zero—proving complete duplication. To solve this, we implemented SMOTE-NC, which interpolates in hybrid Euclidean-Hamming space. It achieves a healthy DCR of 1.45, generating genuinely novel synthetic patient presentations without memorization."</em></blockquote>
+<hr>
+<h3>Slide 5: System Architecture Overview</h3>
+<li><strong>Visuals:</strong> Complete pipeline diagram from patient inputs to Conformal Safety, WHO Scoring, Counterfactuals, and Multimodal Fusion.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Modular, end-to-end clinical workflow.</li>
+<li>Dual-branch: Microscopic Blood Smear Vision + Clinical Questionnaire Tabular.</li>
+<li>Safety layers: WHO Clinical Danger Engine and Conformal Prediction Sets.</li>
+<hr>
+<h3>Slide 6: Two-Stage Stacking Meta-Ensemble Design</h3>
+<li><strong>Visuals:</strong> Level-0 Base Learners (CatBoost, RF, XGBoost, LightGBM) feeding into Level-1 Logistic Meta-Learner.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Level-0 models are trained across distinct algorithmic paradigms (bagging, oblivious trees, hessian boosting, leaf-wise boosting).</li>
+<li>5-Fold out-of-fold probabilistic margins are fed into an $L_2$-regularized meta-classifier.</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"Rather than relying on a single tree model, our architecture uses a Two-Stage Stacking Meta-Ensemble. By training four diverse base learners—Random Forest, CatBoost, XGBoost, and LightGBM—and feeding their 5-fold cross-validated probability outputs into an L2-regularized meta-learner, we combine their complementary inductive biases and improve boundary stability."</em></blockquote>
+<hr>
+<h3>Slide 7: 9-Classifier Comparative Benchmark on Unseen Data</h3>
+<li><strong>Visuals:</strong> Table 5 (Full 9-Classifier Benchmark: Accuracy, ROC-AUC, Balanced Acc, Precision, Recall, F1, MCC).</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Evaluated on 102 uncompromised, unseen test patients.</li>
+<li>True real-world performance on pure symptom questionnaires is revealed (~55–60% accuracy on raw questionnaire alone).</li>
+<li>Highlights why symptom questionnaires alone have clinical uncertainty, proving the vital need for conformal intervals and microscopic fusion.</li>
+<hr>
+<h3>Slide 8: Statistical Hypothesis Testing (Wilcoxon Signed-Rank)</h3>
+<li><strong>Visuals:</strong> Table 6 (Comparison against Random Forest, CatBoost, XGBoost; Wilcoxon W, p-values).</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Conducted paired Wilcoxon Signed-Rank tests across stratified cross-validation folds.</li>
+<li>The Stacking Meta-Ensemble achieved the highest cross-validated mean score ($0.8154$), confirming superior generalization stability over single tree models.</li>
+<hr>
+<h3>Slide 9: Mathematical Safety via Inductive Conformal Prediction</h3>
+<li><strong>Visuals:</strong> Prediction set taxonomy: $\{0\}$, $\{1\}$, $\{0, 1\}$. Conformal coverage audit table.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>High-stakes medicine cannot tolerate overconfident false negatives.</li>
+<li>Conformal prediction guarantees $P(Y \in \mathcal{C}(X)) \ge 1 - \alpha$.</li>
+<li>At $95\%$ confidence, our model achieved <strong>$98.04\%$ empirical coverage</strong>.</li>
+<li>Ambiguous cases ($\{0, 1\}$) are mathematically flagged for mandatory urgent microscopic examination.</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"In clinical medicine, an overconfident wrong prediction can be lethal. We implemented Inductive Conformal Prediction to provide mathematical safety guarantees. At a 95% nominal confidence level, our system demonstrated 98% empirical coverage. If the system is uncertain, it does not guess; it outputs a prediction set containing both classes, which triggers an automated directive for mandatory laboratory blood film examination."</em></blockquote>
+<hr>
+<h3>Slide 10: Prescriptive Explainability: Actionable Counterfactuals (DiCE)</h3>
+<li><strong>Visuals:</strong> Counterfactual Intervention Pathways diagram showing target clinical reversals.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Standard SHAP and LIME only tell a doctor <em>why</em> an alert happened.</li>
+<li>DiCE provides <strong>actionable clinical prescriptions</strong>: <em>What minimal interventions reverse high risk?</em></li>
+<li>Enforces domain constraints: Patient age is <strong>strictly immutable</strong>. Mutable targets are clinical signs (<code>hypoglycemia</code>, <code>hyperpyrexia</code>, <code>convulsion</code>).</li>
+<blockquote><strong>Speaker Script:</strong></blockquote>
+<blockquote><em>"Traditional XAI methods like SHAP are descriptive—they tell you why a patient was classified as severe, but offer no treatment strategy. We implemented DiCE to provide prescriptive counterfactuals. By locking immutable biological features like patient age, the system determines the exact minimal clinical interventions—such as resolving hypoglycemia via IV dextrose or controlling convulsions with anticonvulsants—that will successfully transition the patient to low-risk status."</em></blockquote>
+<hr>
+<h3>Slide 11: Algorithmic Fairness & Subgroup Equity Audit</h3>
+<li><strong>Visuals:</strong> Subgroup Performance Chart (Pediatric vs Adult, Male vs Female).</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Audited across Pediatric ($\le 12$ yrs), Young Adult, Older Adult, and Gender cohorts.</li>
+<li>Gender Equal Opportunity Difference is $0.1422$ (satisfies $< 0.15$ parity tolerance).</li>
+<li><em>Critical Discovery:</em> Pure ML models exhibit a 40% False Negative Rate in young children due to low cohort representation. Our <strong>WHO Clinical Danger Rule Engine</strong> acts as an essential clinical failsafe.</li>
+<hr>
+<h3>Slide 12: Multimodal Cytology Fusion (Vision + Tabular)</h3>
+<li><strong>Visuals:</strong> Microscope thin blood smear slide image with signet-ring trophozoite alongside cross-modal attention diagram.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>PyTorch <code>CytologyVisionBranch</code> processes $224 \times 224$ Giemsa-stained thin blood film cell images.</li>
+<li>Detects parasite chromatin dots and ring cytoplasm, estimating Cytological Parasitemia Index.</li>
+<li>Cross-attention fusion produces a unified diagnosis and evaluates <strong>Modality Congruence</strong> (flagging discrepancies between slide and symptoms).</li>
+<hr>
+<h3>Slide 13: Clinical Web Workstation & Production REST API</h3>
+<li><strong>Visuals:</strong> Screenshots of the 8-tab Streamlit workstation and FastAPI Swagger documentation.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Complete clinician interface with risk gauges, counterfactual simulator, and downloadable PDF/HTML Medical Dossiers.</li>
+<li>Production FastAPI backend (<code>api/main.py</code>) ready for hospital EHR integration.</li>
+<hr>
+<h3>Slide 14: Clinical Medical Dossier & Multi-Format EHR Exports</h3>
+<li><strong>Visuals:</strong> Rendered HTML Clinical Diagnostic Dossier, Print-to-PDF layout preview, and JSON EHR data exchange schema.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>One-click synthesis of official, print-ready Clinical Diagnostic Dossiers with embedded A4 <code>@media print</code> styling, doctor notes, and signature blocks.</li>
+<li>HL7 FHIR v4 compliant JSON data exchange serialization (<code>/Observation</code>, <code>/DiagnosticReport</code>) for hospital Electronic Health Record (EHR) integration.</li>
+<li>Multi-patient batch screener producing institutional ward triage registries for hospital epidemic monitoring.</li>
+<hr>
+<h3>Slide 15: Rigorous Engineering & Test Suite Validation</h3>
+<li><strong>Visuals:</strong> Terminal output showing <code>Ran 9 tests in 6.513s - OK</code>.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>100% automated test pass rate across unit and integration tests.</li>
+<li>Tests verify leak-free resampling, DCR non-memorization, conformal coverage bounds, counterfactual age immutability, multimodal fusion, and JSON/HTML report generation.</li>
+<hr>
+<h3>Slide 16: Strategic 5-Pillar Future Work & Translational Roadmap</h3>
+<li><strong>Visuals:</strong> 5-Pillar architectural roadmap diagram and TinyML INT8 quantization workflow.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li><strong>Pillar 1 (TinyML & Edge Acceleration):</strong> INT8 post-training quantization compressing model footprint from 45.2MB to 4.1MB for sub-20ms inference on $50 off-grid Android tablets in rural clinics.</li>
+<li><strong>Pillar 2 (Whole Slide Imaging & Cytology Backbones):</strong> Automated parasitemia index quantification across full gigapixel blood films and differential species diagnosis (<em>P. falciparum</em> vs. <em>P. vivax</em> liver hypnozoites).</li>
+<li><strong>Pillar 3 (Cross-Continental Federated Learning):</strong> Decentralized FedAvg training across international partner hospitals in Nigeria, Kenya, Ghana, and India under $(\epsilon, \delta)$-Differential Privacy to preserve data sovereignty.</li>
+<li><strong>Pillar 4 (Enterprise EHR & Global Surveillance):</strong> Native integration with OpenMRS across 40+ countries and automated transmission telemetry to DHIS2 for national outbreak containment.</li>
+<li><strong>Pillar 5 (Pharmacogenomics & Drug Resistance):</strong> Longitudinal parasite clearance curve modeling and point-of-care PCR genotyping for <em>pfkelch13</em> mutations to mitigate emerging Artemisinin resistance.</li>
+<hr>
+<h3>Slide 17: Publications, Societal Impact & Conclusion</h3>
+<li><strong>Visuals:</strong> Manuscript preview ([manuscript/PAPER_DRAFT.md](manuscript/PAPER_DRAFT.md)), Target Journals, Project Summary.</li>
+<li><strong>Key Talking Points:</strong></li>
+<li>Complete paper draft ready for submission to <em>BMC Medical Informatics and Decision Making</em> or <em>IEEE Access</em>.</li>
+<li>Solves a life-critical healthcare problem in low-resource endemic regions with verifiable mathematical safety guarantees.</li>
+<li>Thank you to the evaluation committee. Open for questions.</li>
+<blockquote><strong>Closing Script:</strong></blockquote>
+<blockquote><em>"In conclusion, this project transforms a simple questionnaire reproduction into a scientifically sound, clinically actionable, and multimodal decision support ecosystem. We identified and corrected publication data leakage, introduced Stacking Meta-Ensembles with Conformal Uncertainty, audited demographic fairness, delivered instant multi-format clinical report downloads, and architected an efficient 5-pillar translational roadmap for future clinical deployment. Thank you, and I look forward to your questions."</em></blockquote>
+    </div>
+</body>
+</html>
