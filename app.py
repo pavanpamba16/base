@@ -30,11 +30,27 @@ import joblib
 
 from PIL import Image
 
-# Internal research modules
-from src.clinical_engine import compute_who_danger_score, generate_clinical_html_report
-from src.counterfactuals import ClinicalCounterfactualExplainer
-from src.conformal_prediction import ConformalMalariaPredictor
-from src.multimodal_fusion import MultimodalMalariaClassifier
+# Internal research modules with resilient cloud fallbacks
+try:
+    from src.clinical_engine import compute_who_danger_score, generate_clinical_html_report
+except Exception:
+    compute_who_danger_score = None
+    generate_clinical_html_report = None
+
+try:
+    from src.counterfactuals import ClinicalCounterfactualExplainer
+except Exception:
+    ClinicalCounterfactualExplainer = None
+
+try:
+    from src.conformal_prediction import ConformalMalariaPredictor
+except Exception:
+    ConformalMalariaPredictor = None
+
+try:
+    from src.multimodal_fusion import MultimodalMalariaClassifier
+except Exception:
+    MultimodalMalariaClassifier = None
 
 # Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
