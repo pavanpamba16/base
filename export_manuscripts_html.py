@@ -217,7 +217,8 @@ def compile_all_manuscripts():
     files_to_compile = [
         ("PAPER_DRAFT.md", "PAPER_DRAFT.html", "Journal Paper Manuscript"),
         ("FINAL_YEAR_PROJECT_REPORT.md", "FINAL_YEAR_PROJECT_REPORT.html", "Project Dissertation Report"),
-        ("PROJECT_DEFENSE_PRESENTATION.md", "PROJECT_DEFENSE_PRESENTATION.html", "Oral Defense Presentation Deck")
+        ("PROJECT_DEFENSE_PRESENTATION.md", "PROJECT_DEFENSE_PRESENTATION.html", "Oral Defense Presentation Deck"),
+        ("FUTURE_WORK_ROADMAP.md", "FUTURE_WORK_ROADMAP.html", "Strategic Future Work Roadmap")
     ]
 
     print("=" * 70)
