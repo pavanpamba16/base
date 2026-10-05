@@ -121,7 +121,8 @@ def generate_clinical_html_report(
     # Conformal uncertainty
     conf_text = ""
     if conformal_result:
-        conf_set_str = ", ".join(conformal_result.get("prediction_set", [])) if isinstance(conformal_result.get("prediction_set"), list) else str(conformal_result.get("prediction_set"))
+        raw_set = conformal_result.get("prediction_set", [])
+        conf_set_str = ", ".join(str(x) for x in raw_set) if isinstance(raw_set, (list, tuple, set)) else str(raw_set)
         conf_badge = '<span style="background:#fed7d7;color:#9b2c2c;padding:3px 8px;border-radius:4px;font-weight:bold;">AMBIGUOUS / HIGH UNCERTAINTY</span>' if conformal_result.get("is_ambiguous") else '<span style="background:#c6f6d5;color:#22543d;padding:3px 8px;border-radius:4px;font-weight:bold;">CONFIDENT SINGLE-CLASS</span>'
         conf_text = f"""
         <div style="margin-top:15px;padding:12px 16px;background:#f7fafc;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;">
