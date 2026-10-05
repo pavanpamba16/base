@@ -89,6 +89,8 @@ def display_paper_results():
     t2 = os.path.join(OUTPUTS_DIR, "table2_before_balancing.csv")
     t3 = os.path.join(OUTPUTS_DIR, "table3_after_oversampling.csv")
     t4 = os.path.join(OUTPUTS_DIR, "table4_hyperparameter_tuning.csv")
+    t5 = os.path.join(OUTPUTS_DIR, "table_research_benchmark_comparison.csv")
+    t6 = os.path.join(OUTPUTS_DIR, "table_statistical_tests.csv")
 
     if os.path.exists(t2):
         print("\n--- TABLE 2: PERFORMANCE BEFORE BALANCING (RAW 1:2 IMBALANCE) ---")
@@ -101,6 +103,14 @@ def display_paper_results():
     if os.path.exists(t4):
         print("\n--- TABLE 4: MODEL PERFORMANCE AFTER HYPERPARAMETER TUNING ---")
         print(pd.read_csv(t4).to_string(index=False))
+
+    if os.path.exists(t5):
+        print("\n--- TABLE 5: NOVEL RESEARCH BENCHMARK (9 CLASSIFIERS ON LEAK-FREE SMOTE-NC) ---")
+        print(pd.read_csv(t5).to_string(index=False))
+
+    if os.path.exists(t6):
+        print("\n--- TABLE 6: STATISTICAL SIGNIFICANCE TESTS (WILCOXON SIGNED-RANK) ---")
+        print(pd.read_csv(t6).to_string(index=False))
     print("=" * 80 + "\n")
 
 

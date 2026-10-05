@@ -22,18 +22,19 @@
 ## 🎯 Executive Summary & Objectives
 Malaria remains a major public health challenge globally, particularly across sub-Saharan Africa. Traditional clinical diagnostic protocols often rely on optical microscopy or rapid diagnostic tests (RDTs), which suffer from sensitivity constraints during low-parasitemia infections.
 
-This repository provides an **end-to-end, reproduction and clinical decision support system** based on the 2025 BMC paper. It integrates:
-1. **Five Ensemble Classifiers:** Random Forest, AdaBoost, Gradient Boosting, XGBoost, and CatBoost.
-2. **Spearman Rank Correlation Feature Selection:** Identifying and retaining 16 predictive features while dropping non-informative ones (`sex`).
-3. **Class Imbalance Mitigation:** Oversampling the minority severe malaria cases on training data.
-4. **Hyperparameter Tuning:** 5-fold cross-validated `RandomizedSearchCV` across all ensemble models.
-5. **Transparent Explainable AI (XAI):**
-   - **LIME:** Local Interpretable Model-agnostic Explanations for individual patient triage.
-   - **SHAP:** Game-theoretic Shapley values showing global and patient-level symptom distributions.
-   - **Permutation Feature Importance (PFI):** Empirical feature ranking across the dataset.
-6. **Interactive Clinical Web Application (Streamlit):** Real-time patient triage, diagnostic probability gauges, local XAI visualizers, and batch screening.
+This repository provides an **end-to-end clinical decision support system** that:
+1. **Fully reproduces** the baseline 2025 BMC study (*Awe et al.*).
+2. **Advances beyond prior literature** with major research contributions designed for **academic publication and Final Year Project (FYP) excellence**:
+   - 🛡️ **Methodological Leakage Rectification:** Resolving pre-split oversampling to ensure honest, out-of-sample clinical generalization.
+   - 🧬 **Synthetic Generative Balancing & Privacy Audit:** Replacing naive Random Oversampling (100% exact memorization, DCR = 0.0) with **SMOTE-NC** (novel synthetic clinical cases, DCR = 1.45).
+   - 🏆 **Stacking Meta-Ensemble:** Combining CatBoost, Random Forest, XGBoost, and LightGBM with an out-of-fold probabilistic meta-learner.
+   - 🎯 **Inductive Conformal Prediction (ICP):** Providing mathematical coverage guarantees (98% empirical coverage at 95% confidence) and flagging ambiguous cases for urgent microscopic verification.
+   - 🔄 **Actionable Counterfactual XAI (DiCE):** Prescriptive "what-if" intelligence identifying minimal targeted clinical interventions to reverse severe malaria risk.
+   - 📋 **WHO Severe Malaria Protocol & Medical Dossier:** Automated WHO danger score calculation and print-ready clinical diagnostic dossier export.
+   - 📄 **Publication Manuscript:** Complete research paper draft formatted for journal submission at [`manuscript/PAPER_DRAFT.md`](manuscript/PAPER_DRAFT.md).
 
 ---
+
 
 ## 📁 Repository Structure
 ```text

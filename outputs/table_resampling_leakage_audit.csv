@@ -1,0 +1,6 @@
+Method,Train Samples (Balanced),Minority Class 1,Majority Class 0,Mean Distance to Closest Record (DCR),Min DCR (Memorization Risk),Correlation Preservation (MACD)
+Random Over-Sampling (ROS),308,154,154,0.0,0.0,0.0863
+SMOTE,308,154,154,2.4233,0.0,0.0997
+SMOTE-NC,308,154,154,1.4491,0.0,0.1247
+Borderline-SMOTE,308,154,154,2.3325,0.0,0.1023
+ADASYN,312,158,154,2.3474,0.0,0.0922

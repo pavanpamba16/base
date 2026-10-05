@@ -1,0 +1,6 @@
+Subgroup,Sample Size,Prevalence (True Severe %),Selection Rate (Predicted %),Accuracy,ROC AUC,Recall (Sensitivity),False Negative Rate (FNR),Precision,F1 Score
+Age: Pediatric (<=12),27,18.5,11.1,0.9259,0.6818,0.6,0.4,1.0,0.75
+Age: Young Adult (13-35),211,34.1,36.0,0.8483,0.9037,0.8056,0.1944,0.7632,0.7838
+Age: Older Adult (>35),99,39.4,33.3,0.8586,0.9483,0.7436,0.2564,0.8788,0.8056
+Gender: Female,157,34.4,38.2,0.8599,0.9292,0.8519,0.1481,0.7667,0.807
+Gender: Male,180,34.4,28.9,0.8556,0.8934,0.7097,0.2903,0.8462,0.7719

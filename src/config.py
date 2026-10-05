@@ -82,4 +82,49 @@ PARAM_GRIDS = {
         "learning_rate": [0.01, 0.1, 0.2],
         "depth": [4, 6, 8],
     },
+    "LightGBM": {
+        "n_estimators": [100, 200, 300],
+        "learning_rate": [0.01, 0.05, 0.1],
+        "num_leaves": [15, 31, 63],
+    }
+}
+
+# Categorical and Continuous feature partitioning for SMOTE-NC & Tabular Deep Learning
+CATEGORICAL_FEATURES = [f for f in FEATURE_COLUMNS if f != "age"]
+CATEGORICAL_INDICES = [i for i, f in enumerate(FEATURE_COLUMNS) if f != "age"]
+CONTINUOUS_FEATURES = ["age"]
+
+# Counterfactual (DiCE) Feature Actionability Taxonomy
+IMMUTABLE_FEATURES = ["age"]
+MUTABLE_ACTIONABLE_FEATURES = [
+    "hypoglycemia",
+    "hyperpyrexia",
+    "vomitting",
+    "diarrhea",
+    "Convulsion"
+]
+MUTABLE_SYMPTOMATIC_FEATURES = [
+    "fever",
+    "cold",
+    "rigor",
+    "fatigue",
+    "headace",
+    "bitter_tongue",
+    "Anemia",
+    "jundice",
+    "cocacola_urine",
+    "prostraction"
+]
+
+# WHO Severe Malaria Warning Signs (Clinical Triage Criteria)
+WHO_SEVERE_CRITERIA = {
+    "prostraction": {"label": "Prostration / Extreme Inability to Sit", "severity_weight": 3},
+    "Convulsion": {"label": "Convulsions / Recurrent Seizures", "severity_weight": 3},
+    "hyperpyrexia": {"label": "Hyperpyrexia (>39°C Core Temp)", "severity_weight": 2},
+    "cocacola_urine": {"label": "Hemoglobinuria / Coca-Cola Urine", "severity_weight": 3},
+    "hypoglycemia": {"label": "Hypoglycemia (Blood Glucose <2.2 mmol/L)", "severity_weight": 3},
+    "jundice": {"label": "Jaundice / Hyperbilirubinemia", "severity_weight": 2},
+    "Anemia": {"label": "Severe Anemia (Hb <7 g/dL)", "severity_weight": 2},
+    "vomitting": {"label": "Persistent Vomiting / Inability to Retain Oral Meds", "severity_weight": 1},
+    "diarrhea": {"label": "Severe Dehydration / Diarrhea", "severity_weight": 1}
 }
