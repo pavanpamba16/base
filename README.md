@@ -1,12 +1,12 @@
 # Explainable Multimodal AI Decision Support System for Severe Malaria Diagnosis
 
-[![Live Demo](https://img.shields.io/badge/Live%20CDSS%20Cloud-base--pavanpamba16-brightgreen?style=for-the-badge&logo=streamlit)](https://base-pavanpamba16.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20CDSS%20Cloud-malariaproject-brightgreen?style=for-the-badge&logo=streamlit)](https://malariaproject.streamlit.app/)
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Framework](https://img.shields.io/badge/Stack-PyTorch%20%7C%20FastAPI%20%7C%20Scikit--Learn%20%7C%20CatBoost%20%7C%20SHAP%20%7C%20DiCE-orange.svg)](https://scikit-learn.org)
 [![Unit Tests](https://img.shields.io/badge/Tests-9%2F9%20Passing-brightgreen.svg)](tests/test_pipeline.py)
 
-> 🌐 **Live Web Application (Streamlit Cloud):** **[https://base-pavanpamba16.streamlit.app/](https://base-pavanpamba16.streamlit.app/)**  
+> 🌐 **Live Web Application (Streamlit Cloud):** **[https://malariaproject.streamlit.app/](https://malariaproject.streamlit.app/)**  
 > 💻 **Local Streamlit Instance:** `streamlit run app.py` (Port 8501)  
 > 🚀 **Production REST API:** `uvicorn api.main:app --port 8000 --reload` (Port 8000, Swagger at `/docs`)
 
@@ -69,8 +69,8 @@ All publication and university project deliverables are pre-compiled and ready i
 
 ### 1. Environment Setup
 ```bash
-git clone https://github.com/pavanpamba16/base.git
-cd base
+git clone https://github.com/pavanpamba16/baseproject.git
+cd baseproject
 pip install -r requirements.txt
 ```
 
