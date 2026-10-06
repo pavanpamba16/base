@@ -6,6 +6,7 @@
 [![Framework](https://img.shields.io/badge/Stack-PyTorch%20%7C%20FastAPI%20%7C%20Scikit--Learn%20%7C%20CatBoost%20%7C%20SHAP%20%7C%20DiCE-orange.svg)](https://scikit-learn.org)
 [![Unit Tests](https://img.shields.io/badge/Tests-9%2F9%20Passing-brightgreen.svg)](tests/test_pipeline.py)
 
+> ⚡ **Active Instant Live Demo:** **[https://edward-laboratory-bracelets-marking.trycloudflare.com](https://edward-laboratory-bracelets-marking.trycloudflare.com)** *(Instant public access, live right now!)*  
 > 🌐 **Live Web Application (Streamlit Cloud):** **[https://malariaproject.streamlit.app/](https://malariaproject.streamlit.app/)**  
 > 💻 **Local Streamlit Instance:** `streamlit run app.py` (Port 8501)  
 > 🚀 **Production REST API:** `uvicorn api.main:app --port 8000 --reload` (Port 8000, Swagger at `/docs`)
